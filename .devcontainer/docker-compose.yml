@@ -1,0 +1,11 @@
+name: design-patterns-go
+services:
+  design-patterns-go:
+    container_name: design-patterns-go
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace/design-patterns-go
+    stdin_open: true
+    tty: true
