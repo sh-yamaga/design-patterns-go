@@ -1,3 +1,3 @@
 # Iterator Pattern
 
-![Class Diagram](./docs/class-diagram.drawio.png)
+![Class Diagram](./.docs/class-diagram.drawio.png)
