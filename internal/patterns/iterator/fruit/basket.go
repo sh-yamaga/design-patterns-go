@@ -22,6 +22,6 @@ func (fb Basket) Length() int {
 	return len(fb.fruits)
 }
 
-func (fb Basket) Iterator() *BasketIterator {
+func (fb Basket) Iterator() *basketIterator {
 	return newBasketIterator(&fb)
 }
