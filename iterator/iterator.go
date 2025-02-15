@@ -6,5 +6,5 @@ type Iterator[T any] interface {
 }
 
 type Iterable[T any] interface {
-	Iterator() Iterator[T]
+	Iterator() *Iterator[T]
 }
