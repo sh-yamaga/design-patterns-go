@@ -20,6 +20,7 @@ func main() {
 		f := ittr.Next()
 		fmt.Printf("%s [%s]\n", f.Name(), f.Color())
 	}
+
 	// Output:
 	// Apple [red]
 	// Orange [orange]
