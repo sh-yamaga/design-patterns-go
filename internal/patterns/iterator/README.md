@@ -1,10 +1,10 @@
 # Iterator Pattern
 
-## what is "Iterator Pattern"
+## What is "Iterator Pattern" ?
 
 The Iterator Pattern is a design pattern that provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. It is commonly used to traverse collections like lists, arrays, or other data structures.
 
-## why is "Iterator Pattern" needed
+## Why is "Iterator Pattern" needed ?
 
 While `for` loops provide a straightforward way to iterate over collections, the Iterator Pattern offers several advantages:
 
@@ -18,7 +18,7 @@ While `for` loops provide a straightforward way to iterate over collections, the
 
 5. **Separation of Concerns**: By separating the iteration logic from the collection itself, the Iterator Pattern promotes cleaner and more maintainable code.
 
-## Sample
+## Sample program
 
 ![Class Diagram](./.docs/class-diagram.drawio.png)
 
