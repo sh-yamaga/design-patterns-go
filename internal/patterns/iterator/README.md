@@ -20,6 +20,8 @@ While `for` loops provide a straightforward way to iterate over collections, the
 
 ## Sample
 
+![Class Diagram](./.docs/class-diagram.drawio.png)
+
 This sample code demonstrates the use of the Iterator Pattern with an example of fruits and a fruit basket. The fruit basket is treated as a collection containing multiple fruits, and an Iterator is used to access the fruits sequentially.
 
 - **Fruit**: A struct representing a fruit, with properties such as name and type.
@@ -29,6 +31,3 @@ This sample code demonstrates the use of the Iterator Pattern with an example of
 By using this pattern, you can process the fruits in the basket sequentially while keeping the internal structure of the fruit basket hidden.
 
 To run the sample code, execute `go run ./cmd/iterator/main.go`.
-
-### Class Diagram
-![Class Diagram](./.docs/class-diagram.drawio.png)
