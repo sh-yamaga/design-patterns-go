@@ -18,23 +18,23 @@ const (
 	Winter Season = "Winter"
 )
 
-type Hemisphere struct {
+type MonthSeason struct {
 	direction Direction
 	month     time.Month
 }
 
-func NewHemisphere(direction Direction, month time.Month) *Hemisphere {
-	return &Hemisphere{
+func NewMonthSeason(direction Direction, month time.Month) *MonthSeason {
+	return &MonthSeason{
 		direction: direction,
 		month:     month,
 	}
 }
 
-func (h Hemisphere) Month() string {
+func (h MonthSeason) Month() string {
 	return h.month.String()
 }
 
-func (h Hemisphere) Season() Season {
+func (h MonthSeason) Season() Season {
 	switch h.direction {
 	case North:
 		switch h.month {

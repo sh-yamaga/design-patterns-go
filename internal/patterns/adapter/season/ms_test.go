@@ -8,7 +8,7 @@ import (
 func TestSeasonSummer(t *testing.T) {
 	au := time.Date(2025, time.August, 1, 0, 0, 0, 0, time.UTC)
 
-	nh := NewHemisphere(North, NewMonth(au).Month)
+	nh := NewMonthSeason(North, NewMonth(au).Month)
 
 	got := nh.Season()
 	want := Summer
