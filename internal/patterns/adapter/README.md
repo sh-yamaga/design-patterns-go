@@ -1,5 +1,4 @@
 # Adapter Pattern
 
-## Sample program
-
+## Class Diagram
 ![Class Diagram](./.docs/class-diagram.drawio.png)
