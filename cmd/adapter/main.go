@@ -5,21 +5,42 @@ import (
 
 	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter"
 	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter/aws"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter/gcp"
 )
 
 var s3Adapter aws.S3Adapter
+var csAdapter gcp.CloudStorageAdapter
 
 func init() {
-	s3 := aws.S3{Storage: make(map[string]string)}
+	s3 := aws.S3{Bucket: make(map[string]string)}
 	s3Adapter = aws.S3Adapter{S3Client: &s3}
+
+	cs := gcp.CloudStorage{Bucket: make(map[string]string)}
+	csAdapter = gcp.CloudStorageAdapter{CloudStorageClient: &cs}
 }
 
 func main() {
-	var cs adapter.CloudStorage = &s3Adapter
+	var sc adapter.StorageClient
 
-	upResult := cs.UploadFile("example.txt", "example content s3")
-	fmt.Println(upResult)
+	// aws
+	sc = &s3Adapter
+	fmt.Println(sc.UploadFile("example.txt", "example content s3"))
+	// Output:
+	// AWS S3: Upload Successful, example.txt
 
-	content := cs.GetContent("example.txt")
-	fmt.Println(content)
+	fmt.Println(sc.GetContent("example.txt"))
+	// Output:
+	// AWS S3: Content of example.txt
+	// example content s3
+
+	// gcp
+	sc = &csAdapter
+	fmt.Println(sc.UploadFile("example.txt", "example content CloudStorage"))
+	// Output:
+	// GCP CloudStorage: Upload Successful, example.txt
+
+	fmt.Println(sc.GetContent("example.txt"))
+	// Output:
+	// 	GCP CloudStorage: Content of example.txt
+	// example content CloudStorage
 }
