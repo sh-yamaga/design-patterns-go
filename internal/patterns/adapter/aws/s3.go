@@ -12,9 +12,9 @@ type S3Client interface {
 func (s *S3) Upload(fileName string, content string) string {
 	s.Storage[fileName] = content
 
-	return "Upload Successful: " + fileName
+	return "AWS S3: Upload Successful, " + fileName
 }
 
 func (s *S3) Content(fileName string) string {
-	return s.Storage[fileName]
+	return "AWS S3: Content of " + fileName + "\n" + s.Storage[fileName]
 }

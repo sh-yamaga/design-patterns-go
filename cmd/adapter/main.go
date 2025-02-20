@@ -17,7 +17,7 @@ func init() {
 func main() {
 	var cs adapter.CloudStorage = &s3Adapter
 
-	upResult := cs.UploadFile("example.txt", "example content")
+	upResult := cs.UploadFile("example.txt", "example content s3")
 	fmt.Println(upResult)
 
 	content := cs.GetContent("example.txt")
