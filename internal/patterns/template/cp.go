@@ -2,25 +2,25 @@ package template
 
 import "fmt"
 
-// CSVProcessor is a concrete implementation of IDataProcessor
-type CSVProcessor struct {
+// CsvProcessor is a concrete implementation of IDataProcessor
+type CsvProcessor struct {
 	BaseProcessor
 }
 
-// LoadData loads data from a CSV file
-func (cp *CSVProcessor) LoadData() error {
-	fmt.Println("Loading data from CSV file")
+// Load loads data from a CSV file
+func (cp *CsvProcessor) Load() error {
+	fmt.Println("Loading data from csv file")
 	return nil
 }
 
 // ProcessData processes the loaded data
-func (cp *CSVProcessor) ProcessData() error {
-	fmt.Println("Processing CSV data")
+func (cp *CsvProcessor) Process() error {
+	fmt.Println("Processing csv data")
 	return nil
 }
 
 // SaveData saves the processed data
-func (cp *CSVProcessor) SaveData() error {
-	fmt.Println("Saving processed CSV data")
+func (cp *CsvProcessor) Save() error {
+	fmt.Println("Saving processed csv data")
 	return nil
 }

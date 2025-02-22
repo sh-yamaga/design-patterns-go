@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var cp *template.CSVProcessor = &template.CSVProcessor{}
+	var cp *template.CsvProcessor = &template.CsvProcessor{}
 	cp.BaseProcessor.IDataProcessor = cp
 
 	if err := cp.Execute(); err != nil {
