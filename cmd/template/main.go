@@ -1,12 +1,18 @@
 package main
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/template"
+import (
+	"fmt"
+
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/template"
+)
 
 func main() {
 	var cp *template.CSVProcessor = &template.CSVProcessor{}
 	cp.BaseProcessor.IDataProcessor = cp
 
-	cp.Execute()
+	if err := cp.Execute(); err != nil {
+		fmt.Println(err.Error())
+	}
 	// Output:
 	// Loading data from CSV file
 	// Processing CSV data

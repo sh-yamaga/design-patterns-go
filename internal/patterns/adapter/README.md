@@ -2,7 +2,7 @@
 
 ## What is "Adapter Pattern" ?
 
-The Adapter Pattern is a structural design pattern that allows objects with incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by wrapping an existing class with a new interface.
+The Adapter Pattern is a structural design pattern that allows structs with incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by wrapping an existing struct with a new interface.
 
 ![Class Diagram](./.docs/class-diagram.drawio.png)
 
@@ -10,9 +10,9 @@ The Adapter Pattern is a structural design pattern that allows objects with inco
 
 The Adapter Pattern is useful in the following scenarios:
 
-1. **Compatibility**: It allows classes with incompatible interfaces to communicate, enabling integration of new components into existing systems without modifying the existing code.
+1. **Compatibility**: It allows structs with incompatible interfaces to communicate, enabling integration of new components into existing systems without modifying the existing code.
 
-2. **Reusability**: By using adapters, you can reuse existing classes even if they don't have the desired interface, promoting code reuse and reducing duplication.
+2. **Reusability**: By using adapters, you can reuse existing structs even if they don't have the desired interface, promoting code reuse and reducing duplication.
 
 3. **Flexibility**: The pattern provides a flexible way to connect different interfaces, making it easier to extend and maintain the system.
 
