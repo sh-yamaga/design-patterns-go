@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	var cp *template.CsvProcessor = &template.CsvProcessor{}
-	cp.BaseProcessor.IDataProcessor = cp
+	cp := template.NewCsvProcessor()
 
 	if err := cp.Execute(); err != nil {
 		fmt.Println(err.Error())

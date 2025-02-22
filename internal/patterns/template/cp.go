@@ -7,6 +7,14 @@ type CsvProcessor struct {
 	BaseProcessor
 }
 
+// NewCsvProcessor returns a new instance of CsvProcessor
+func NewCsvProcessor() *CsvProcessor {
+	cp := &CsvProcessor{}
+	cp.BaseProcessor.IDataProcessor = cp
+
+	return cp
+}
+
 // Load loads data from a CSV file
 func (cp *CsvProcessor) Load() error {
 	fmt.Println("Loading data from csv file")
