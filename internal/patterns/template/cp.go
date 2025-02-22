@@ -2,7 +2,7 @@ package template
 
 import "fmt"
 
-// CSVProcessor is a concrete implementation of DataProcessor
+// CSVProcessor is a concrete implementation of IDataProcessor
 type CSVProcessor struct {
 	BaseProcessor
 }

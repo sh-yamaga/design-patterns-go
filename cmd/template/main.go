@@ -4,7 +4,7 @@ import "github.com/sh-yamaga/design-patterns-go/internal/patterns/template"
 
 func main() {
 	var cp *template.CSVProcessor = &template.CSVProcessor{}
-	cp.BaseProcessor.DataProcessor = cp
+	cp.BaseProcessor.IDataProcessor = cp
 
 	cp.Execute()
 	// Output:
