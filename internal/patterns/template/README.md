@@ -22,12 +22,13 @@ The Template Pattern offers several advantages:
 
 ![Sample program diagram](./.docs/sample-program.drawio.png)
 
-This sample code demonstrates the use of the Template Pattern with an example of a CSV data processing system. The system processes CSV data using a common algorithm structure defined in a base processor function.
+This sample code demonstrates the use of the Template Pattern with examples of CSV and XML data processing systems. The system processes data using a common algorithm structure defined in a base processor function.
 
 - **IDataProcessor**: An interface defining the template method and steps for data processing.
 - **BaseProcessor**: A struct providing a default implementation of the `Execute` function, which defines the skeleton of the algorithm.
 - **CsvProcessor**: A concrete implementation of `IDataProcessor` that provides specific implementations for loading, processing, and saving CSV data.
+- **XmlProcessor**: A concrete implementation of `IDataProcessor` that provides specific implementations for loading, processing, and saving XML data.
 
-By using this pattern, you can process CSV data using a consistent algorithm structure while allowing for specific customizations in the `CsvProcessor`.
+By using this pattern, you can process both CSV and XML data using a consistent algorithm structure while allowing for specific customizations in the `CsvProcessor` and `XmlProcessor`.
 
 To run the sample code, execute `go run ./cmd/template/main.go`.
