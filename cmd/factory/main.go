@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	factory := &factory.ProcessorFactory{}
+	pf := &factory.ProcessorFactory{}
 
-	// csv processor
-	cp := factory.CreateCsvProcessor()
+	// Create a new CsvProcessor instance using the factory method
+	cp := pf.CsvProcessor()
 
 	if err := cp.Execute(); err != nil {
 		fmt.Println(err.Error())
@@ -20,8 +20,8 @@ func main() {
 	// Processing csv data
 	// Saving processed csv data
 
-	// xml processor
-	xp := factory.CreateXmlProcessor()
+	// Create a new XmlProcessor instance using the factory method
+	xp := pf.XmlProcessor()
 
 	if err := xp.Execute(); err != nil {
 		fmt.Println(err.Error())
