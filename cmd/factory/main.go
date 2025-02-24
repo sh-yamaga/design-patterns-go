@@ -8,13 +8,13 @@ import (
 
 func main() {
 	factory := &factory.ProcessorFactory{}
-	processor := factory.CreateCsvProcessor()
+	cp := factory.CreateCsvProcessor()
 
-	if err := processor.Execute(); err != nil {
+	if err := cp.Execute(); err != nil {
 		fmt.Println(err.Error())
 	}
 	// Output:
-	// Loading data from CSV file
-	// Processing CSV data
-	// Saving processed CSV data
+	// Loading data from csv file
+	// Processing csv data
+	// Saving processed csv data
 }

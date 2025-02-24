@@ -1,18 +1,12 @@
-package template
+package processor
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // CsvProcessor is a concrete implementation of IDataProcessor
 type CsvProcessor struct {
 	BaseProcessor
-}
-
-// NewCsvProcessor returns a new instance of CsvProcessor
-func NewCsvProcessor() *CsvProcessor {
-	cp := &CsvProcessor{}
-	cp.BaseProcessor.IDataProcessor = cp
-
-	return cp
 }
 
 // Load loads data from a CSV file
