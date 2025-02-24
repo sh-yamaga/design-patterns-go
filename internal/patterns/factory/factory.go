@@ -7,6 +7,7 @@ import (
 // DataProcessorFactory defines the factory method for creating IDataProcessor instances
 type DataProcessorFactory interface {
 	CreateCsvProcessor() *processor.CsvProcessor
+	CreateXmlProcessor() *processor.XmlProcessor
 }
 
 // ProcessorFactory is a concrete factory for creating CsvProcessor instances
@@ -18,4 +19,12 @@ func (f *ProcessorFactory) CreateCsvProcessor() *processor.CsvProcessor {
 	cp.BaseProcessor.IDataProcessor = cp
 
 	return cp
+}
+
+// CreateXmlProcessor creates a new XmlProcessor instance
+func (f *ProcessorFactory) CreateXmlProcessor() *processor.XmlProcessor {
+	xp := &processor.XmlProcessor{}
+	xp.BaseProcessor.IDataProcessor = xp
+
+	return xp
 }
