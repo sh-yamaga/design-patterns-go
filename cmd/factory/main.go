@@ -10,7 +10,7 @@ func main() {
 	pf := &factory.ProcessorFactory{}
 
 	// Create a new CsvProcessor instance using the factory method
-	cp := pf.CsvProcessor()
+	cp := pf.NewCsvProcessor()
 
 	if err := cp.Execute(); err != nil {
 		fmt.Println(err.Error())
@@ -21,7 +21,7 @@ func main() {
 	// Saving processed csv data
 
 	// Create a new XmlProcessor instance using the factory method
-	xp := pf.XmlProcessor()
+	xp := pf.NewXmlProcessor()
 
 	if err := xp.Execute(); err != nil {
 		fmt.Println(err.Error())
