@@ -1,6 +1,6 @@
 # Design Patterns in Go
 
-This project is a collection of implementations of the Gang of Four (GoF) design patterns using the Go programming language. The aim is to provide clear and concise examples of each pattern, demonstrating their use and benefits in real-world scenarios.
+This project is a collection of implementations of the Gang of Four (GoF) design patterns using the Go. The aim is to provide clear and concise examples of each pattern, demonstrating their use and benefits in real-world scenarios.
 
 ## Project Structure
 
@@ -14,6 +14,7 @@ The project is organized into several directories, each representing a different
 
 1. Open this project in a devcontainer to ensure all dependencies and configurations are correctly set up. 
 2. Once inside the devcontainer, navigate to the `cmd` directory of the pattern you wish to explore and execute the Go program using the `go run` command.
+
 for instace:
 ```bash
 go run ./cmd/iterator/main.go
