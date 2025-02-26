@@ -4,30 +4,17 @@ import (
 	"fmt"
 
 	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/book"
 )
 
 func main() {
-	pf := &factory.ProcessorFactory{}
+	bf := book.NewBookFactory()
 
-	// Create a new CsvProcessor instance using the factory method
-	cp := pf.NewCsvProcessor()
+	b1 := bf.Create("Kurt Vonnegut", "The Sirens of Titan", factory.WorkCategory(book.SF))
+	b2 := bf.Create("Osamu Tezuka", "Phoenix", factory.WorkCategory(book.Manga))
+	b3 := bf.Create("Yuval Noah Harari", "Sapiens: A Brief History of Humankind", factory.WorkCategory(book.History))
 
-	if err := cp.Execute(); err != nil {
-		fmt.Println(err.Error())
-	}
-	// Output:
-	// Loading data from csv file
-	// Processing csv data
-	// Saving processed csv data
-
-	// Create a new XmlProcessor instance using the factory method
-	xp := pf.NewXmlProcessor()
-
-	if err := xp.Execute(); err != nil {
-		fmt.Println(err.Error())
-	}
-	// Output:
-	// Loading data from xml file
-	// Processing xml data
-	// Saving processed xml data
+	fmt.Println(b1.String())
+	fmt.Println(b2.String())
+	fmt.Println(b3.String())
 }
