@@ -1,20 +1,23 @@
 package factory
 
-type WorkCategory int
+import (
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/book"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/movie"
+)
 
-type IFactory interface {
-	Create(creater string, title string, category WorkCategory) *Work
-	createWork(creater string, title string, category WorkCategory) *Work
-	registerWork(*Work)
+type IWorkFactory interface {
+	BookFactory() book.BookFactory
+	MovieFactory() movie.MovieFactory
 }
 
-type BaseFactory struct {
-	IFactory
+type WorkFactory struct {
+	IWorkFactory
 }
 
-func (bf BaseFactory) Create(creater string, title string, category WorkCategory) *Work {
-	w := bf.IFactory.createWork(creater, title, category)
-	bf.IFactory.registerWork(w)
+func (wf WorkFactory) BookFactory() book.BookFactory {
+	return book.NewBookFacotry()
+}
 
-	return w
+func (wf WorkFactory) MovieFactory() movie.MovieFactory {
+	return movie.NewMovieFacotry()
 }
