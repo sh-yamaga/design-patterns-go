@@ -17,13 +17,8 @@ type RootWorkFactory struct {
 	Category work.WorkCategory
 }
 
-type WorkFactory struct {
-	RootWorkFactory
-	IWorkFactory
-}
-
 func (rwf RootWorkFactory) Create(wc work.WorkCategory) IWorkFactory {
-	factory, err := rwf.RegisterFactory(wc)
+	factory, err := rwf.registerFactory(wc)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -31,7 +26,7 @@ func (rwf RootWorkFactory) Create(wc work.WorkCategory) IWorkFactory {
 	return factory
 }
 
-func (rfc RootWorkFactory) RegisterFactory(wc work.WorkCategory) (IWorkFactory, error) {
+func (rfc RootWorkFactory) registerFactory(wc work.WorkCategory) (IWorkFactory, error) {
 	switch wc {
 	case work.BookCategory:
 		return BookFactory{}, nil

@@ -7,7 +7,7 @@ import (
 )
 
 type MovieFactory struct {
-	WorkFactory
+	IWorkFactory
 }
 
 func (mf MovieFactory) Create(title, creater string) *work.Work {
