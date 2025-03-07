@@ -7,14 +7,7 @@ import (
 )
 
 type BookFactory struct {
-	IWorkFactory
-}
-
-func (bf BookFactory) Create(title, creater string) *work.Work {
-	var book *work.Work = bf.createWork(title, creater)
-	bf.registerWork(book)
-
-	return book
+	Factory
 }
 
 func (bf BookFactory) createWork(title, creater string) *work.Work {

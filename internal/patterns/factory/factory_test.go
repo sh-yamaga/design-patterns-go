@@ -8,8 +8,8 @@ import (
 
 func TestWorkFactory(t *testing.T) {
 	var rwf RootWorkFactory = RootWorkFactory{}
-	var bookFactory IWorkFactory = rwf.Create(work.BookCategory)
-	var movieFactory IWorkFactory = rwf.Create(work.MovieCategory)
+	bookFactory, _ := rwf.Generate(work.BookCategory)
+	movieFactory, _ := rwf.Generate(work.MovieCategory)
 
 	// Check if bookFactory is of the expected type
 	if _, ok := interface{}(bookFactory).(IWorkFactory); !ok {

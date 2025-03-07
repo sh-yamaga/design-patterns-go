@@ -7,14 +7,7 @@ import (
 )
 
 type MovieFactory struct {
-	IWorkFactory
-}
-
-func (mf MovieFactory) Create(title, creater string) *work.Work {
-	var movie *work.Work = mf.createWork(title, creater)
-	mf.registerWork(movie)
-
-	return movie
+	Factory
 }
 
 func (mf MovieFactory) createWork(title, creater string) *work.Work {
