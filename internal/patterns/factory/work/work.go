@@ -33,5 +33,5 @@ type Work struct {
 }
 
 func (w Work) Display() {
-	fmt.Printf("Category: %s, Title: %s, Creater: %s\n", w.Category.String(), w.Title, w.Creater)
+	fmt.Printf("【 %s 】\n Title: %s\n Creater: %s\n", w.Category.String(), w.Title, w.Creater)
 }

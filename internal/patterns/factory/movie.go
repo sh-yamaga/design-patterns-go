@@ -11,13 +11,13 @@ type MovieFactory struct {
 }
 
 func (mf MovieFactory) Create(title, creater string) *work.Work {
-	var movie *work.Work = mf.CreateWork(title, creater)
-	mf.RegisterWork(movie)
+	var movie *work.Work = mf.createWork(title, creater)
+	mf.registerWork(movie)
 
 	return movie
 }
 
-func (mf MovieFactory) CreateWork(title, creater string) *work.Work {
+func (mf MovieFactory) createWork(title, creater string) *work.Work {
 	return &work.Work{
 		Title:    title,
 		Creater:  creater,
@@ -25,6 +25,6 @@ func (mf MovieFactory) CreateWork(title, creater string) *work.Work {
 	}
 }
 
-func (mf MovieFactory) RegisterWork(w *work.Work) {
+func (mf MovieFactory) registerWork(w *work.Work) {
 	fmt.Println("registered a Movie: " + w.Title)
 }

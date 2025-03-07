@@ -11,13 +11,13 @@ type BookFactory struct {
 }
 
 func (bf BookFactory) Create(title, creater string) *work.Work {
-	var book *work.Work = bf.CreateWork(title, creater)
-	bf.RegisterWork(book)
+	var book *work.Work = bf.createWork(title, creater)
+	bf.registerWork(book)
 
 	return book
 }
 
-func (bf BookFactory) CreateWork(title, creater string) *work.Work {
+func (bf BookFactory) createWork(title, creater string) *work.Work {
 	return &work.Work{
 		Title:    title,
 		Creater:  creater,
@@ -25,6 +25,6 @@ func (bf BookFactory) CreateWork(title, creater string) *work.Work {
 	}
 }
 
-func (bf BookFactory) RegisterWork(w *work.Work) {
+func (bf BookFactory) registerWork(w *work.Work) {
 	fmt.Println("registered a Book: " + w.Title)
 }

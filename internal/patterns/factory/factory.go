@@ -22,16 +22,13 @@ type WorkFactory struct {
 	IWorkFactory
 }
 
-func (rwf RootWorkFactory) Create(wc work.WorkCategory) *WorkFactory {
+func (rwf RootWorkFactory) Create(wc work.WorkCategory) IWorkFactory {
 	factory, err := rwf.RegisterFactory(wc)
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	return &WorkFactory{
-		RootWorkFactory: RootWorkFactory{Category: wc},
-		IWorkFactory:    factory,
-	}
+	return factory
 }
 
 func (rfc RootWorkFactory) RegisterFactory(wc work.WorkCategory) (IWorkFactory, error) {
