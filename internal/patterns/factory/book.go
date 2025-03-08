@@ -14,7 +14,7 @@ func (bf BookFactory) createWork(title, creater string) *work.Work {
 	return &work.Work{
 		Title:    title,
 		Creater:  creater,
-		Category: work.BookCategory,
+		Category: work.Book,
 	}
 }
 

@@ -13,10 +13,10 @@ type IWorkFactory interface {
 }
 
 type RootWorkFactory struct {
-	Category work.WorkCategory
+	Category work.Category
 }
 
-func (rwf RootWorkFactory) Generate(wc work.WorkCategory) (IWorkFactory, error) {
+func (rwf RootWorkFactory) Generate(wc work.Category) (IWorkFactory, error) {
 	factory, err := rwf.registerFactory(wc)
 	if err != nil {
 		return nil, err
@@ -25,15 +25,15 @@ func (rwf RootWorkFactory) Generate(wc work.WorkCategory) (IWorkFactory, error) 
 	return factory, nil
 }
 
-func (rfc RootWorkFactory) registerFactory(wc work.WorkCategory) (IWorkFactory, error) {
+func (rfc RootWorkFactory) registerFactory(wc work.Category) (IWorkFactory, error) {
 	switch wc {
-	case work.BookCategory:
+	case work.Book:
 		bf := BookFactory{}
 		// register method to interface
 		bf.Factory.IWorkFactory = bf
 
 		return bf, nil
-	case work.MovieCategory:
+	case work.Movie:
 		mf := MovieFactory{}
 		// register method to interface
 		mf.Factory.IWorkFactory = mf

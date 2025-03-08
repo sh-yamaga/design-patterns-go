@@ -14,7 +14,7 @@ func (mf MovieFactory) createWork(title, creater string) *work.Work {
 	return &work.Work{
 		Title:    title,
 		Creater:  creater,
-		Category: work.MovieCategory,
+		Category: work.Movie,
 	}
 }
 

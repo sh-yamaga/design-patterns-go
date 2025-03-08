@@ -2,19 +2,19 @@ package work
 
 import "fmt"
 
-type WorkCategory int
+type Category int
 
 const (
-	Undefined WorkCategory = iota
-	BookCategory
-	MovieCategory
+	Undefined Category = iota
+	Book
+	Movie
 )
 
-func (wc WorkCategory) String() string {
-	switch wc {
-	case BookCategory:
+func (c Category) String() string {
+	switch c {
+	case Book:
 		return "Book"
-	case MovieCategory:
+	case Movie:
 		return "Movie"
 	default:
 		return "Undefined"
@@ -28,7 +28,7 @@ type IWork interface {
 type Work struct {
 	Title    string
 	Creater  string
-	Category WorkCategory
+	Category Category
 	IWork
 }
 

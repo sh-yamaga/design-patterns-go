@@ -11,12 +11,12 @@ import (
 func main() {
 	var rwf factory.RootWorkFactory = factory.RootWorkFactory{}
 	// create factories
-	bookFactory, err := rwf.Generate(work.BookCategory)
+	bookFactory, err := rwf.Generate(work.Book)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	movieFactory, err := rwf.Generate(work.MovieCategory)
+	movieFactory, err := rwf.Generate(work.Movie)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
