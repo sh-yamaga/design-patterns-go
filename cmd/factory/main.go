@@ -5,27 +5,27 @@ import (
 	"os"
 
 	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/work"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
 )
 
 func main() {
-	var rwf factory.RootWorkFactory = factory.RootWorkFactory{}
-	// create factories
-	bookFactory, err := rwf.Generate(work.Book)
+	var rwf factory.CreatorFactory = factory.CreatorFactory{}
+
+	bookCreator, err := rwf.NewCreator(category.Book)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	movieFactory, err := rwf.Generate(work.Movie)
+	movieCreator, err := rwf.NewCreator(category.Movie)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	b1 := bookFactory.Create("The Sirens of Titan", "Kurt Vonnegut")
-	b2 := bookFactory.Create("The Three-Body Problem", "Cixin Liu")
-	m1 := movieFactory.Create("About Time", "Richard Curtis")
-	m2 := movieFactory.Create("Forrest Gump", "Robert Lee Zemeckis")
+	b1 := bookCreator.Create("The Sirens of Titan", "Kurt Vonnegut")
+	b2 := bookCreator.Create("The Three-Body Problem", "Cixin Liu")
+	m1 := movieCreator.Create("About Time", "Richard Curtis")
+	m2 := movieCreator.Create("Forrest Gump", "Robert Lee Zemeckis")
 	// Output:
 	// registered a Book: The Sirens of Titan
 	// registered a Book: The Three-Body Problem

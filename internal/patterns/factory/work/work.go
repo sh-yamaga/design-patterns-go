@@ -1,25 +1,10 @@
 package work
 
-import "fmt"
+import (
+	"fmt"
 
-type Category int
-
-const (
-	Undefined Category = iota
-	Book
-	Movie
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
 )
-
-func (c Category) String() string {
-	switch c {
-	case Book:
-		return "Book"
-	case Movie:
-		return "Movie"
-	default:
-		return "Undefined"
-	}
-}
 
 type IWork interface {
 	Display()
@@ -28,7 +13,7 @@ type IWork interface {
 type Work struct {
 	Title    string
 	Creater  string
-	Category Category
+	Category category.Work
 	IWork
 }
 

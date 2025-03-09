@@ -3,21 +3,22 @@ package factory
 import (
 	"testing"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/work"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/creator"
 )
 
 func TestWorkFactory(t *testing.T) {
-	var rwf RootWorkFactory = RootWorkFactory{}
-	bookFactory, _ := rwf.Generate(work.Book)
-	movieFactory, _ := rwf.Generate(work.Movie)
+	var rwf CreatorFactory = CreatorFactory{}
+	bookCreator, _ := rwf.NewCreator(category.Book)
+	movieCreator, _ := rwf.NewCreator(category.Movie)
 
-	// Check if bookFactory is of the expected type
-	if _, ok := interface{}(bookFactory).(IWorkFactory); !ok {
-		t.Errorf("Expected bookFactory to be of type WorkFactory, got %T", bookFactory)
+	// Check if bookCreator is of the expected type
+	if _, ok := interface{}(bookCreator).(creator.IWorkCreator); !ok {
+		t.Errorf("Expected bookCreator to be of type WorkFactory, got %T", bookCreator)
 	}
 
-	// Check if movieFactory is of the expected type
-	if _, ok := interface{}(movieFactory).(IWorkFactory); !ok {
-		t.Errorf("Expected movieFactory to be of type WorkFactory, got %T", movieFactory)
+	// Check if movieCreator is of the expected type
+	if _, ok := interface{}(movieCreator).(creator.IWorkCreator); !ok {
+		t.Errorf("Expected movieCreator to be of type WorkFactory, got %T", movieCreator)
 	}
 }

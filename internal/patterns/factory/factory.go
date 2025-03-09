@@ -3,21 +3,16 @@ package factory
 import (
 	"errors"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/work"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/creator"
 )
 
-type IWorkFactory interface {
-	Create(title, creater string) *work.Work
-	createWork(title, creater string) *work.Work
-	registerWork(w *work.Work)
+type CreatorFactory struct {
+	Category category.Work
 }
 
-type RootWorkFactory struct {
-	Category work.Category
-}
-
-func (rwf RootWorkFactory) Generate(wc work.Category) (IWorkFactory, error) {
-	factory, err := rwf.registerFactory(wc)
+func (cf CreatorFactory) NewCreator(wc category.Work) (creator.IWorkCreator, error) {
+	factory, err := cf.registerCreator(wc)
 	if err != nil {
 		return nil, err
 	}
@@ -25,32 +20,19 @@ func (rwf RootWorkFactory) Generate(wc work.Category) (IWorkFactory, error) {
 	return factory, nil
 }
 
-func (rfc RootWorkFactory) registerFactory(wc work.Category) (IWorkFactory, error) {
+func (cf CreatorFactory) registerCreator(wc category.Work) (creator.IWorkCreator, error) {
 	switch wc {
-	case work.Book:
-		bf := BookFactory{}
-		// register method to interface
-		bf.Factory.IWorkFactory = bf
+	case category.Book:
+		bc := creator.BookCreator{}
+		bc.BaseCreator.IWorkCreator = bc
 
-		return bf, nil
-	case work.Movie:
-		mf := MovieFactory{}
-		// register method to interface
-		mf.Factory.IWorkFactory = mf
+		return bc, nil
+	case category.Movie:
+		mc := creator.MovieCreator{}
+		mc.BaseCreator.IWorkCreator = mc
 
-		return mf, nil
+		return mc, nil
 	default:
-		return nil, errors.New("unexpected WorkCategory was given")
+		return nil, errors.New("unexpected category.Work was given")
 	}
-}
-
-type Factory struct {
-	IWorkFactory
-}
-
-func (f Factory) Create(title, creater string) *work.Work {
-	var w *work.Work = f.IWorkFactory.createWork(title, creater)
-	f.IWorkFactory.registerWork(w)
-
-	return w
 }
