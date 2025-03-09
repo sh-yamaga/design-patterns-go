@@ -11,14 +11,19 @@ type BookCreator struct {
 	BaseCreator
 }
 
-func (bf BookCreator) createWork(title, creater string) *work.Work {
+func (bc BookCreator) createWork(title, creator string) *work.Work {
 	return &work.Work{
 		Title:    title,
-		Creater:  creater,
+		Creater:  creator,
 		Category: category.Book,
 	}
 }
 
-func (bf BookCreator) registerWork(w *work.Work) {
-	fmt.Println("registered a Book: " + w.Title)
+func (bc BookCreator) registerWork(w *work.Work) work.IWork {
+	fmt.Printf("registered book: %s\n", w.Title)
+	var book work.Book = work.Book{
+		Work: *w,
+	}
+
+	return book
 }

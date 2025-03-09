@@ -11,14 +11,19 @@ type MovieCreator struct {
 	BaseCreator
 }
 
-func (mc MovieCreator) createWork(title, creater string) *work.Work {
+func (mc MovieCreator) createWork(title, creator string) *work.Work {
 	return &work.Work{
 		Title:    title,
-		Creater:  creater,
+		Creater:  creator,
 		Category: category.Movie,
 	}
 }
 
-func (mc MovieCreator) registerWork(w *work.Work) {
-	fmt.Println("registered a Movie: " + w.Title)
+func (mc MovieCreator) registerWork(w *work.Work) work.IWork {
+	fmt.Printf("registered movie: %s\n", w.Title)
+	var movie work.Movie = work.Movie{
+		Work: *w,
+	}
+
+	return movie
 }

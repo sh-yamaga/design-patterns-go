@@ -1,5 +1,5 @@
 package work
 
-type Book struct {
+type Movie struct {
 	Work
 }
