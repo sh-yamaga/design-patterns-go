@@ -8,22 +8,26 @@ import (
 )
 
 type BookCreator struct {
-	BaseCreator
 }
 
-func (bc BookCreator) createWork(title, creator string) *work.Work {
-	return &work.Work{
-		Title:    title,
-		Creater:  creator,
-		Category: category.Book,
-	}
+func (bc BookCreator) New(title, creator string) *work.Book {
+	b := bc.createBook(title, creator)
+	bc.registerBook(b)
+
+	return b
 }
 
-func (bc BookCreator) registerWork(w *work.Work) work.IWork {
-	fmt.Printf("registered book: %s\n", w.Title)
-	var book work.Book = work.Book{
-		Work: *w,
-	}
+func (bc BookCreator) createBook(title, creator string) *work.Book {
+	return &work.Book{
+		Work: work.Work{
+			Title:    title,
+			Creater:  creator,
+			Category: category.Book,
+		}}
+}
 
-	return book
+func (bc BookCreator) registerBook(b *work.Book) *work.Book {
+	fmt.Printf("registered book: %s\n", b.Title)
+
+	return b
 }

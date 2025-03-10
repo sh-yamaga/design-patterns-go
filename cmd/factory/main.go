@@ -1,31 +1,17 @@
 package main
 
 import (
-	"fmt"
-	"os"
-
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/creator"
 )
 
 func main() {
-	var rwf factory.CreatorFactory = factory.CreatorFactory{}
+	bookCreator := creator.BookCreator{}
+	movieCreator := creator.MovieCreator{}
 
-	bookCreator, err := rwf.NewCreator(category.Book)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-	movieCreator, err := rwf.NewCreator(category.Movie)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
-	b1 := bookCreator.Create("The Sirens of Titan", "Kurt Vonnegut")
-	b2 := bookCreator.Create("The Three-Body Problem", "Cixin Liu")
-	m1 := movieCreator.Create("About Time", "Richard Curtis")
-	m2 := movieCreator.Create("Forrest Gump", "Robert Lee Zemeckis")
+	b1 := bookCreator.New("The Sirens of Titan", "Kurt Vonnegut")
+	b2 := bookCreator.New("The Three-Body Problem", "Cixin Liu")
+	m1 := movieCreator.New("About Time", "Richard Curtis")
+	m2 := movieCreator.New("Forrest Gump", "Robert Lee Zemeckis")
 	// Output:
 	// registered a Book: The Sirens of Titan
 	// registered a Book: The Three-Body Problem

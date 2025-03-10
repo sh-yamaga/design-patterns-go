@@ -8,22 +8,26 @@ import (
 )
 
 type MovieCreator struct {
-	BaseCreator
 }
 
-func (mc MovieCreator) createWork(title, creator string) *work.Work {
-	return &work.Work{
-		Title:    title,
-		Creater:  creator,
-		Category: category.Movie,
-	}
+func (mc MovieCreator) New(title, creator string) *work.Movie {
+	m := mc.createMovie(title, creator)
+	mc.registerMovie(m)
+
+	return m
 }
 
-func (mc MovieCreator) registerWork(w *work.Work) work.IWork {
-	fmt.Printf("registered movie: %s\n", w.Title)
-	var movie work.Movie = work.Movie{
-		Work: *w,
-	}
+func (mc MovieCreator) createMovie(title, creator string) *work.Movie {
+	return &work.Movie{
+		Work: work.Work{
+			Title:    title,
+			Creater:  creator,
+			Category: category.Movie,
+		}}
+}
 
-	return movie
+func (mc MovieCreator) registerMovie(m *work.Movie) *work.Movie {
+	fmt.Printf("registered movie: %s\n", m.Title)
+
+	return m
 }
