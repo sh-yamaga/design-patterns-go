@@ -18,4 +18,6 @@ func main() {
 	} else {
 		fmt.Println("s1 != s2")
 	}
+	// Output:
+	// s1 == s2
 }
