@@ -7,17 +7,24 @@ import (
 )
 
 func main() {
-	s1 := singleton.New()
-	s2 := singleton.New()
+	tm1 := singleton.New()
+	tm2 := singleton.New()
 
-	// This is compile error
-	// s1.data = "another value"
+	fmt.Println("Next ticketNo:", tm1.Next())
+	fmt.Println("Next ticketNo:", tm2.Next())
+	fmt.Println("Next ticketNo:", tm1.Next())
+	fmt.Println("Next ticketNo:", tm2.Next())
+	fmt.Println("Next ticketNo:", tm1.Next())
+	// Output:
+	// Next ticketNo: 1
+	// Next ticketNo: 2
+	// Next ticketNo: 3
+	// Next ticketNo: 4
+	// Next ticketNo: 5
 
-	if s1 == s2 {
-		fmt.Println("s1 == s2")
-	} else {
-		fmt.Println("s1 != s2")
+	if tm1 == tm2 {
+		fmt.Println("tm1 == tm2")
 	}
 	// Output:
-	// s1 == s2
+	// tm1 == tm2
 }
