@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	tm1 := singleton.New()
-	tm2 := singleton.New()
+	tm1 := singleton.NewTicketManager()
+	tm2 := singleton.NewTicketManager()
 
 	fmt.Println("Next ticketNo:", tm1.Next())
 	fmt.Println("Next ticketNo:", tm2.Next())

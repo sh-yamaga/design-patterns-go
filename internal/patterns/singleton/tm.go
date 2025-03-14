@@ -9,8 +9,8 @@ type TicketManager struct {
 var ticketManager *TicketManager
 var once sync.Once
 
-// New returns a new instance of TicketManager only once.
-func New() *TicketManager {
+// NewTicketManager returns a new instance of TicketManager only once.
+func NewTicketManager() *TicketManager {
 	once.Do(func() {
 		ticketManager = &TicketManager{currentTicket: 0}
 	})
