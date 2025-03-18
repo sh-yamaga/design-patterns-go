@@ -21,6 +21,5 @@ func (s *Square) Draw() {
 }
 
 func (s *Square) Clone() Shape {
-	// 新しいSquareを作成し、元のSquareの値をコピーします。
 	return &Square{Side: s.Side}
 }
