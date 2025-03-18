@@ -9,7 +9,7 @@ import (
 type IHtmlBuilder interface {
 	SetTitle(title string) IHtmlBuilder
 	AddParagraph(text string) IHtmlBuilder
-	AddList(items []string) IHtmlBuilder
+	AddList(items ...string) IHtmlBuilder
 	Build() string
 }
 
@@ -17,7 +17,7 @@ type IHtmlBuilder interface {
 type HtmlBuilder struct {
 	title      string
 	paragraphs []string
-	lists      [][]string
+	list       []string
 }
 
 // NewHtmlBuilder creates a new instance of HtmlBuilder
@@ -35,8 +35,8 @@ func (hb *HtmlBuilder) AddParagraph(text string) *HtmlBuilder {
 	return hb
 }
 
-func (hb *HtmlBuilder) AddList(items []string) *HtmlBuilder {
-	hb.lists = append(hb.lists, items)
+func (hb *HtmlBuilder) AddList(items ...string) *HtmlBuilder {
+	hb.list = items
 	return hb
 }
 
@@ -50,9 +50,9 @@ func (hb *HtmlBuilder) Build() string {
 	for _, p := range hb.paragraphs {
 		sb.WriteString(fmt.Sprintf("<p>%s</p>\n", p))
 	}
-	for _, list := range hb.lists {
+	if len(hb.list) != 0 {
 		sb.WriteString("<ul>\n")
-		for _, item := range list {
+		for _, item := range hb.list {
 			sb.WriteString(fmt.Sprintf("<li>%s</li>\n", item))
 		}
 		sb.WriteString("</ul>\n")

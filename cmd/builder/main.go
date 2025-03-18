@@ -10,7 +10,7 @@ func main() {
 	hb := builder.NewHtmlBuilder()
 	html := hb.SetTitle("Builder Pattern").
 		AddParagraph("This is a sample program that demonstrates the Builder Pattern, a type of GoF Design Pattern").
-		AddList([]string{"item1", "item2", "item3"}).
+		AddList("item1", "item2", "item3").
 		Build()
 
 	fmt.Println(html)
