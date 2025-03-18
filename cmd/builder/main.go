@@ -28,4 +28,14 @@ func main() {
 	// </ul>
 	// </body>
 	// </html>
+
+	sb := builder.NewSQLBuilder()
+	query := sb.Select("id", "name", "age").
+		From("users").
+		Where("age > 18").
+		Build()
+
+	fmt.Println(query)
+	// Output:
+	// SELECT id, name, age FROM users WHERE age > 18;
 }
