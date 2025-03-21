@@ -10,7 +10,7 @@ import (
 
 type Strategy interface {
 	GuessNumber(target, max int) int
-	Name() string
+	String() string
 }
 
 type guess struct {
@@ -43,7 +43,7 @@ func main() {
 				fmt.Println("failed")
 			}
 		}
-		fmt.Printf("%s Time: %s\n", g.strategy.Name(), time.Since(start))
+		fmt.Printf("%s Time: %s\n", g.strategy.String(), time.Since(start))
 	}
 	// Output:
 	// BruteForce Time: 13.972542ms

@@ -19,6 +19,6 @@ func (bs BinarySearch) GuessNumber(target, max int) int {
 	return -1
 }
 
-func (bs BinarySearch) Name() string {
+func (bs BinarySearch) String() string {
 	return "BinarySearch"
 }

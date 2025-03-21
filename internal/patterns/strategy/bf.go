@@ -10,6 +10,6 @@ func (bf BruteForce) GuessNumber(target, max int) int {
 	return guess
 }
 
-func (bf BruteForce) Name() string {
+func (bf BruteForce) String() string {
 	return "BruteForce"
 }
