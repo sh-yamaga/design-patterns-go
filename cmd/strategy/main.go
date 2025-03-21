@@ -10,6 +10,7 @@ import (
 
 type Strategy interface {
 	GuessNumber(target, max int) int
+	Name() string
 }
 
 type guess struct {
@@ -21,21 +22,24 @@ func (g guess) execute(target, max int) int {
 }
 
 func main() {
-	// 乱数の上限値
-	max := 1000
-	// 乱数生成機の生成
+	max := 100_000
+	var start time.Time
+	// Random number generator
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	// strategyの設定
-	g := guess{strategy: strategy.BruteForce{}}
 
-	start := time.Now()
-	for i := 0; i < 100; i++ {
-		// 対象の値
-		t := r.Intn(max + 1)
-		if rt := g.execute(t, max); t != rt {
-			fmt.Println("failed")
-		}
+	var gs = [2]guess{
+		{strategy: strategy.BruteForce{}},
+		{strategy: strategy.BinarySearch{}},
 	}
-	elapsedTime := time.Since(start)
-	fmt.Printf("Loop execution time: %s\n", elapsedTime)
+
+	for _, g := range gs {
+		start = time.Now()
+		for i := 0; i < 100; i++ {
+			t := r.Intn(max + 1)
+			if rt := g.execute(t, max); t != rt {
+				fmt.Println("failed")
+			}
+		}
+		fmt.Printf("%s Time: %s\n", g.strategy.Name(), time.Since(start))
+	}
 }

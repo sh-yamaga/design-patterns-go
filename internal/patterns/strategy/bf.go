@@ -9,3 +9,7 @@ func (bf BruteForce) GuessNumber(target, max int) int {
 	}
 	return guess
 }
+
+func (bf BruteForce) Name() string {
+	return "BruteForce"
+}
