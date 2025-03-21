@@ -22,11 +22,12 @@ func (g guess) execute(target, max int) int {
 }
 
 func main() {
-	max := 100_000
+	max := 10_000
 	var start time.Time
 	// Random number generator
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
+	// Array of strategies for guessing random numbers
 	var gs = [2]guess{
 		{strategy: strategy.BruteForce{}},
 		{strategy: strategy.BinarySearch{}},
@@ -34,12 +35,17 @@ func main() {
 
 	for _, g := range gs {
 		start = time.Now()
-		for i := 0; i < 100; i++ {
-			t := r.Intn(max + 1)
-			if rt := g.execute(t, max); t != rt {
+		for i := 0; i < 10_000; i++ {
+			// generate random number
+			target := r.Intn(max + 1)
+			// g.execute returns an integer that is expected to be the target
+			if result := g.execute(target, max); target != result {
 				fmt.Println("failed")
 			}
 		}
 		fmt.Printf("%s Time: %s\n", g.strategy.Name(), time.Since(start))
 	}
+	// Output:
+	// BruteForce Time: 13.972542ms
+	// BinarySearch Time: 555.542µs
 }
