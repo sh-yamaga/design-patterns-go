@@ -23,6 +23,9 @@ func (g guess) execute(target, max int) int {
 
 func main() {
 	max := 10_000
+	rep := 10_000
+	fmt.Printf("Max Random Number: %d\nRepeat Time: %d\n", max, rep)
+
 	var start time.Time
 	// Random number generator
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
@@ -35,7 +38,7 @@ func main() {
 
 	for _, g := range gs {
 		start = time.Now()
-		for i := 0; i < 10_000; i++ {
+		for i := 0; i < rep; i++ {
 			// generate random number
 			target := r.Intn(max + 1)
 			// g.execute returns an integer that is expected to be the target
