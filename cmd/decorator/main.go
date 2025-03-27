@@ -16,12 +16,12 @@ func main() {
 	}
 
 	// before filtering
-	fmt.Println("original Stream: ", originalStream.Read())
+	fmt.Println("Original Stream:", originalStream.Read())
 	// Output:
-	// hello, decorator pattern
+	// Original Stream: hello, decorator pattern
 
 	// after filtering
-	fmt.Println("Filtered Stream: ", upperStream.Read())
+	fmt.Println("Filtered Stream:", upperStream.Read())
 	// Output:
-	// HELLO, DECORATOR PATTERN
+	// Filtered Stream: HELLO, DECORATOR PATTERN
 }
