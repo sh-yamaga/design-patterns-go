@@ -7,7 +7,7 @@ import (
 
 type File struct {
 	Name  string
-	Level int // 階層レベル
+	Level int
 }
 
 func (f *File) Show() {
