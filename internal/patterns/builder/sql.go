@@ -4,14 +4,6 @@ import (
 	"strings"
 )
 
-// ISQLBuilder is the builder interface
-type ISQLBuilder interface {
-	Select(columns ...string) ISQLBuilder
-	From(table string) ISQLBuilder
-	Where(condition string) ISQLBuilder
-	Build() string
-}
-
 // SQLBuilder is a concrete builder
 type SQLBuilder struct {
 	columns   []string

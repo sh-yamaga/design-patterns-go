@@ -5,14 +5,6 @@ import (
 	"strings"
 )
 
-// IHtmlBuilder is the builder interface
-type IHtmlBuilder interface {
-	SetTitle(title string) IHtmlBuilder
-	AddParagraph(text string) IHtmlBuilder
-	AddList(items ...string) IHtmlBuilder
-	Build() string
-}
-
 // HtmlBuilder is a concrete builder
 type HtmlBuilder struct {
 	title      string
