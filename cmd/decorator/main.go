@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/sh-yamaga/design-patterns-go/internal/patterns/decorator"
+)
 
 func main() {
 	// create original streem
