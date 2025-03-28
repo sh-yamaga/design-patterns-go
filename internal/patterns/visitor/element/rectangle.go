@@ -1,4 +1,4 @@
-package visitor
+package element
 
 type Rectangle struct {
 	Width  float64

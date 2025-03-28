@@ -1,4 +1,4 @@
-package visitor
+package element
 
 type Circle struct {
 	Radius float64

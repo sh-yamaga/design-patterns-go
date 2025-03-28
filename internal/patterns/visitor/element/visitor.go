@@ -1,4 +1,4 @@
-package visitor
+package element
 
 type Visitor interface {
 	VisitCircle(*Circle)
