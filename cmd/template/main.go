@@ -8,8 +8,7 @@ import (
 
 func main() {
 	// csv processor
-	cp := &processor.CsvProcessor{}
-	cp.BaseProcessor.IDataProcessor = cp
+	cp := processor.NewCsvProcessor()
 
 	if err := cp.Execute(); err != nil {
 		fmt.Println(err.Error())
@@ -20,8 +19,7 @@ func main() {
 	// Saving processed csv data
 
 	// xml processor
-	xp := &processor.XmlProcessor{}
-	xp.BaseProcessor.IDataProcessor = xp
+	xp := processor.NewXmlProcessor()
 
 	if err := xp.Execute(); err != nil {
 		fmt.Println(err.Error())

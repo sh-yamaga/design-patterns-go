@@ -2,24 +2,27 @@ package processor
 
 import "fmt"
 
-// XmlProcessor is a concrete implementation of IDataProcessor
-type XmlProcessor struct {
-	BaseProcessor
+func NewXmlProcessor() *processor {
+	return &processor{
+		process: &xmlProcess{},
+	}
 }
 
-func (xp *XmlProcessor) Load() error {
+type xmlProcess struct{}
+
+func (xp *xmlProcess) load() error {
 	fmt.Println("Loading data from xml file")
 	return nil
 }
 
-// ProcessData processes the loaded data
-func (xp *XmlProcessor) Process() error {
-	fmt.Println("Processing xml data")
+// handle processes the loaded data
+func (xp *xmlProcess) handle() error {
+	fmt.Println("Handling xml data")
 	return nil
 }
 
 // SaveData saves the processed data
-func (xp *XmlProcessor) Save() error {
+func (xp *xmlProcess) save() error {
 	fmt.Println("Saving processed xml data")
 	return nil
 }

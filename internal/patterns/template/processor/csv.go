@@ -4,25 +4,28 @@ import (
 	"fmt"
 )
 
-// CsvProcessor is a concrete implementation of IDataProcessor
-type CsvProcessor struct {
-	BaseProcessor
+func NewCsvProcessor() *processor {
+	return &processor{
+		process: &csvProcess{},
+	}
 }
 
+type csvProcess struct{}
+
 // Load loads data from a CSV file
-func (cp *CsvProcessor) Load() error {
+func (cp *csvProcess) load() error {
 	fmt.Println("Loading data from csv file")
 	return nil
 }
 
-// ProcessData processes the loaded data
-func (cp *CsvProcessor) Process() error {
-	fmt.Println("Processing csv data")
+// handle processes the loaded data
+func (cp *csvProcess) handle() error {
+	fmt.Println("Handling csv data")
 	return nil
 }
 
 // SaveData saves the processed data
-func (cp *CsvProcessor) Save() error {
+func (cp *csvProcess) save() error {
 	fmt.Println("Saving processed csv data")
 	return nil
 }
