@@ -1,14 +1,17 @@
 package support
 
 import (
+	"fmt"
+	"net/http"
+
 	cor "github.com/sh-yamaga/design-patterns-go/internal/patterns/CoR"
 )
 
 type ISupport interface {
 	SetNext(ISupport) ISupport
+	Resolve(*cor.HttpResponse)
 	isAvailable(*cor.HttpResponse) bool
 	handle(*cor.HttpResponse)
-	Resolve(*cor.HttpResponse)
 }
 
 type HttpResponseSupport struct {
@@ -31,6 +34,12 @@ func (hrs *HttpResponseSupport) isAvailable(hr *cor.HttpResponse) bool {
 
 func (hrs *HttpResponseSupport) Resolve(hr *cor.HttpResponse) {
 	if hrs.isAvailable(hr) {
+		fmt.Println("===", hrs.name, "===")
+		fmt.Printf(
+			"Response Status Code: %d, (%s)\n",
+			hr.StatusCode,
+			http.StatusText(int(hr.StatusCode)),
+		)
 		hrs.ISupport.handle(hr)
 		return
 	}

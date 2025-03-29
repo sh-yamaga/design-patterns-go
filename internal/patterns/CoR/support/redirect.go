@@ -2,7 +2,6 @@ package support
 
 import (
 	"fmt"
-	"net/http"
 
 	cor "github.com/sh-yamaga/design-patterns-go/internal/patterns/CoR"
 )
@@ -25,12 +24,6 @@ func NewRedirectionResponseSupport() *RedirectionResponseSupport {
 }
 
 func (rrs *RedirectionResponseSupport) handle(hr *cor.HttpResponse) {
-	fmt.Println("===", rrs.name, "===")
-	fmt.Println(
-		"Response Status Code:", hr.StatusCode,
-		"(", http.StatusText(int(hr.StatusCode)), ")",
-	)
-
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }
