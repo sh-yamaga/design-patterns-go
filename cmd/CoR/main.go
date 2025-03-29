@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	// create sample Http Response
 	res := []cor.HttpResponse{
 		// 100-199
 		{StatusCode: 100},
@@ -19,17 +20,20 @@ func main() {
 		{StatusCode: 500},
 	}
 
+	// create Response Supporter
 	info := support.NewInformationalResponseSupport()
 	success := support.NewSuccessResponseSupport()
 	redirect := support.NewRedirectionResponseSupport()
 	clientError := support.NewClientErrorResponseSupport()
 	serverError := support.NewServerErrorResponseSupport()
 
+	// create Chain of Responsibility
 	info.SetNext(success).
 		SetNext(redirect).
 		SetNext(clientError).
 		SetNext(serverError)
 
+	// resolve Http Response
 	for _, r := range res {
 		info.Resolve(&r)
 	}
