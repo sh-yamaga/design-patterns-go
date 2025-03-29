@@ -12,27 +12,25 @@ type RedirectionResponseSupport struct {
 }
 
 func NewRedirectionResponseSupport() *RedirectionResponseSupport {
-	return &RedirectionResponseSupport{
+	rrs := &RedirectionResponseSupport{
 		HttpResponseSupport{
 			name:        "RedirectionResponseSupport",
 			supportFrom: 300,
 			supportTo:   399,
 		},
 	}
+	rrs.ISupport = rrs
+
+	return rrs
 }
 
-func (rrs *RedirectionResponseSupport) Resolve(hr *cor.HttpResponse) {
-	if rrs.isAvailable(hr) {
-		fmt.Println("===", rrs.name, "===")
-		fmt.Println(
-			"Response Status Code:", hr.StatusCode,
-			"(", http.StatusText(int(hr.StatusCode)), ")",
-		)
+func (rrs *RedirectionResponseSupport) handle(hr *cor.HttpResponse) {
+	fmt.Println("===", rrs.name, "===")
+	fmt.Println(
+		"Response Status Code:", hr.StatusCode,
+		"(", http.StatusText(int(hr.StatusCode)), ")",
+	)
 
-		fmt.Println("Logging...")
-		fmt.Println("Redirection Handling")
-		fmt.Println("Done")
-	} else {
-		rrs.next.Resolve(hr)
-	}
+	fmt.Println("handle Response...")
+	fmt.Println("Done")
 }

@@ -12,26 +12,25 @@ type InformationalResponseSupport struct {
 }
 
 func NewInformationalResponseSupport() *InformationalResponseSupport {
-	return &InformationalResponseSupport{
+	irs := &InformationalResponseSupport{
 		HttpResponseSupport{
 			name:        "InformationalResponseSupport",
 			supportFrom: 100,
 			supportTo:   199,
 		},
 	}
+	irs.ISupport = irs
+
+	return irs
 }
 
-func (irs *InformationalResponseSupport) Resolve(hr *cor.HttpResponse) {
-	if irs.isAvailable(hr) {
-		fmt.Println("===", irs.name, "===")
-		fmt.Println(
-			"Response Status Code:", hr.StatusCode,
-			"(", http.StatusText(int(hr.StatusCode)), ")",
-		)
+func (irs *InformationalResponseSupport) handle(hr *cor.HttpResponse) {
+	fmt.Println("===", irs.name, "===")
+	fmt.Println(
+		"Response Status Code:", hr.StatusCode,
+		"(", http.StatusText(int(hr.StatusCode)), ")",
+	)
 
-		fmt.Println("Logging...")
-		fmt.Println("Done")
-	} else {
-		irs.next.Resolve(hr)
-	}
+	fmt.Println("handle Response...")
+	fmt.Println("Done")
 }

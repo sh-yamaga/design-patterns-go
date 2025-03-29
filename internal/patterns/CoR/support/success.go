@@ -12,27 +12,24 @@ type SuccessfulResponseSupport struct {
 }
 
 func NewSuccessResponseSupport() *SuccessfulResponseSupport {
-	return &SuccessfulResponseSupport{
+	srs := &SuccessfulResponseSupport{
 		HttpResponseSupport{
 			name:        "SuccessfulResponseSupport",
 			supportFrom: 200,
 			supportTo:   299,
 		},
 	}
+	srs.ISupport = srs
+	return srs
 }
 
-func (srs *SuccessfulResponseSupport) Resolve(hr *cor.HttpResponse) {
-	if srs.isAvailable(hr) {
-		fmt.Println("===", srs.name, "===")
-		fmt.Println(
-			"Response Status Code:", hr.StatusCode,
-			"(", http.StatusText(int(hr.StatusCode)), ")",
-		)
+func (srs *SuccessfulResponseSupport) handle(hr *cor.HttpResponse) {
+	fmt.Println("===", srs.name, "===")
+	fmt.Println(
+		"Response Status Code:", hr.StatusCode,
+		"(", http.StatusText(int(hr.StatusCode)), ")",
+	)
 
-		fmt.Println("Logging...")
-		fmt.Println("handle Response...")
-		fmt.Println("Done")
-	} else {
-		srs.next.Resolve(hr)
-	}
+	fmt.Println("handle Response...")
+	fmt.Println("Done")
 }
