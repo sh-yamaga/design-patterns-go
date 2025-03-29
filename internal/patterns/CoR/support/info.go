@@ -25,6 +25,7 @@ func NewInformationalResponseSupport() *InformationalResponseSupport {
 type informationalHandler struct{}
 
 func (ih informationalHandler) do(hr *cor.HttpResponse) {
-	fmt.Println("handle Response...")
+	fmt.Println("Recieved Informational Response")
+	fmt.Println("Do Something...")
 	fmt.Println("Done")
 }

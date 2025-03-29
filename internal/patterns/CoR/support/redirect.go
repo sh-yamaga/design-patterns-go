@@ -25,6 +25,7 @@ func NewRedirectionResponseSupport() *RedirectionResponseSupport {
 type redirectHandler struct{}
 
 func (rh redirectHandler) do(hr *cor.HttpResponse) {
-	fmt.Println("handle Response...")
+	fmt.Println("Recieved Redirection Response")
+	fmt.Println("Do Something...")
 	fmt.Println("Done")
 }
