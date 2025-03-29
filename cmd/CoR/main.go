@@ -11,15 +11,17 @@ func main() {
 		{StatusCode: 100},
 		// 200-299
 		{StatusCode: 201},
+		// 300-399
+		{StatusCode: 301},
 	}
 
 	info := support.NewInformationalResponseSupport()
 	success := support.NewSuccessResponseSupport()
 	redirect := support.NewRedirectionResponseSupport()
-	clientError := support.NewClientErrorResponseSupport()
-	serverError := support.NewServerErrorResponseSupport()
+	// clientError := support.NewClientErrorResponseSupport()
+	// serverError := support.NewServerErrorResponseSupport()
 
-	info.SetNext(success)
+	info.SetNext(success).SetNext(redirect)
 
 	for _, r := range res {
 		info.Resolve(&r)

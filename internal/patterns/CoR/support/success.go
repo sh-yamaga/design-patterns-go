@@ -32,5 +32,7 @@ func (srs *SuccessfulResponseSupport) Resolve(hr *cor.HttpResponse) {
 		fmt.Println("Logging...")
 		fmt.Println("handle Response...")
 		fmt.Println("Done")
+	} else {
+		srs.next.Resolve(hr)
 	}
 }
