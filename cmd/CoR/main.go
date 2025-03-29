@@ -39,23 +39,28 @@ func main() {
 	}
 	// Output:
 	// === InformationalResponseSupport ===
-	// Response Status Code: 100 ( Continue )
-	// handle Response...
+	// Response Status Code: 100 (Continue)
+	// Recieved Informational Response
+	// Do Something...
 	// Done
 	// === SuccessfulResponseSupport ===
-	// Response Status Code: 201 ( Created )
-	// handle Response...
+	// Response Status Code: 201 (Created)
+	// Recieved Success Response
+	// Do Something...
 	// Done
 	// === RedirectionResponseSupport ===
-	// Response Status Code: 301 ( Moved Permanently )
-	// handle Response...
+	// Response Status Code: 301 (Moved Permanently)
+	// Recieved Redirection Response
+	// Do Something...
 	// Done
 	// === ClientErrorResponseSupport ===
-	// Response Status Code: 404 ( Not Found )
-	// handle Response...
+	// Response Status Code: 404 (Not Found)
+	// Recieved Client Error Response
+	// Do Something...
 	// Done
 	// === ServerErrorResponseSupport ===
-	// Response Status Code: 500 ( Internal Server Error )
-	// handle Response...
+	// Response Status Code: 500 (Internal Server Error)
+	// Recieved Server Error Response
+	// Do Something...
 	// Done
 }
