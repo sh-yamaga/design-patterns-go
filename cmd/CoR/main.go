@@ -15,6 +15,9 @@ func main() {
 
 	info := support.NewInformationalResponseSupport()
 	success := support.NewSuccessResponseSupport()
+	redirect := support.NewRedirectionResponseSupport()
+	clientError := support.NewClientErrorResponseSupport()
+	serverError := support.NewServerErrorResponseSupport()
 
 	info.SetNext(success)
 
