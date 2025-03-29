@@ -11,18 +11,20 @@ type SuccessfulResponseSupport struct {
 }
 
 func NewSuccessResponseSupport() *SuccessfulResponseSupport {
-	srs := &SuccessfulResponseSupport{
+	return &SuccessfulResponseSupport{
 		HttpResponseSupport{
 			name:        "SuccessfulResponseSupport",
 			supportFrom: 200,
 			supportTo:   299,
+			next:        nil,
+			handler:     successHandler{},
 		},
 	}
-	srs.ISupport = srs
-	return srs
 }
 
-func (srs *SuccessfulResponseSupport) handle(hr *cor.HttpResponse) {
+type successHandler struct{}
+
+func (sh successHandler) do(hr *cor.HttpResponse) {
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }

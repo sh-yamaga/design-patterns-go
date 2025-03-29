@@ -11,19 +11,20 @@ type ServerErrorResponseSupport struct {
 }
 
 func NewServerErrorResponseSupport() *ServerErrorResponseSupport {
-	sers := &ServerErrorResponseSupport{
+	return &ServerErrorResponseSupport{
 		HttpResponseSupport{
 			name:        "ServerErrorResponseSupport",
 			supportFrom: 500,
 			supportTo:   599,
+			next:        nil,
+			handler:     serverErrorHandler{},
 		},
 	}
-	sers.ISupport = sers
-
-	return sers
 }
 
-func (sers *ServerErrorResponseSupport) handle(hr *cor.HttpResponse) {
+type serverErrorHandler struct{}
+
+func (seh serverErrorHandler) do(hr *cor.HttpResponse) {
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }

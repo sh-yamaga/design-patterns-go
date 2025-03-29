@@ -11,19 +11,20 @@ type InformationalResponseSupport struct {
 }
 
 func NewInformationalResponseSupport() *InformationalResponseSupport {
-	irs := &InformationalResponseSupport{
+	return &InformationalResponseSupport{
 		HttpResponseSupport{
 			name:        "InformationalResponseSupport",
 			supportFrom: 100,
 			supportTo:   199,
+			next:        nil,
+			handler:     informationalHandler{},
 		},
 	}
-	irs.ISupport = irs
-
-	return irs
 }
 
-func (irs *InformationalResponseSupport) handle(hr *cor.HttpResponse) {
+type informationalHandler struct{}
+
+func (ih informationalHandler) do(hr *cor.HttpResponse) {
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }

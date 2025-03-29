@@ -11,19 +11,20 @@ type ClientErrorResponseSupport struct {
 }
 
 func NewClientErrorResponseSupport() *ClientErrorResponseSupport {
-	cers := &ClientErrorResponseSupport{
+	return &ClientErrorResponseSupport{
 		HttpResponseSupport{
 			name:        "ClientErrorResponseSupport",
 			supportFrom: 400,
 			supportTo:   499,
+			next:        nil,
+			handler:     clientErrorHandler{},
 		},
 	}
-	cers.ISupport = cers
-
-	return cers
 }
 
-func (cers *ClientErrorResponseSupport) handle(hr *cor.HttpResponse) {
+type clientErrorHandler struct{}
+
+func (ceh clientErrorHandler) do(hr *cor.HttpResponse) {
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }

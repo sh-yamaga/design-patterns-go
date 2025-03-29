@@ -11,19 +11,20 @@ type RedirectionResponseSupport struct {
 }
 
 func NewRedirectionResponseSupport() *RedirectionResponseSupport {
-	rrs := &RedirectionResponseSupport{
+	return &RedirectionResponseSupport{
 		HttpResponseSupport{
 			name:        "RedirectionResponseSupport",
 			supportFrom: 300,
 			supportTo:   399,
+			next:        nil,
+			handler:     redirectHandler{},
 		},
 	}
-	rrs.ISupport = rrs
-
-	return rrs
 }
 
-func (rrs *RedirectionResponseSupport) handle(hr *cor.HttpResponse) {
+type redirectHandler struct{}
+
+func (rh redirectHandler) do(hr *cor.HttpResponse) {
 	fmt.Println("handle Response...")
 	fmt.Println("Done")
 }
