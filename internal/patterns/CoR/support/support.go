@@ -10,7 +10,6 @@ import (
 type ISupport interface {
 	SetNext(ISupport) ISupport
 	Resolve(*cor.HttpResponse)
-	isAvailable(*cor.HttpResponse) bool
 	handle(*cor.HttpResponse)
 }
 
@@ -36,7 +35,7 @@ func (hrs *HttpResponseSupport) Resolve(hr *cor.HttpResponse) {
 	if hrs.isAvailable(hr) {
 		fmt.Println("===", hrs.name, "===")
 		fmt.Printf(
-			"Response Status Code: %d, (%s)\n",
+			"Response Status Code: %d (%s)\n",
 			hr.StatusCode,
 			http.StatusText(int(hr.StatusCode)),
 		)
