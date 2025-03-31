@@ -11,7 +11,7 @@ func main() {
 	cp := processor.NewCsvProcessor()
 
 	if err := cp.Execute(); err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(err)
 	}
 	// Output:
 	// Loading data from csv file
@@ -22,7 +22,7 @@ func main() {
 	xp := processor.NewXmlProcessor()
 
 	if err := xp.Execute(); err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(err)
 	}
 	// Output:
 	// Loading data from xml file
