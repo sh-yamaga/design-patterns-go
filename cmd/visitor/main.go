@@ -8,14 +8,13 @@ import (
 )
 
 func main() {
-	// Add 2 shapes to the Element slice
+	// Create 2 shapes to the Element slice
 	elements := []element.Element{
 		&element.Circle{Radius: 3.0},
 		&element.Rectangle{Width: 4.0, Height: 5.5},
 	}
 
-	// Create 2 visitors
-	areaVisitor := &visitor.AreaVisitor{}
+	// Create visitor which display each information
 	displayVisitor := &visitor.DisplayVisitor{}
 
 	fmt.Println("=== Visitor Displaying Element Information ===")
@@ -28,6 +27,9 @@ func main() {
 	// DisplayVisitor: Rectangle (Width=4.00, Height=5.50)
 
 	fmt.Println()
+
+	// Create visitor which calculates the area of each shape
+	areaVisitor := &visitor.AreaVisitor{}
 
 	fmt.Println("=== Visitor Calculating Element Areas ===")
 	for _, e := range elements {
