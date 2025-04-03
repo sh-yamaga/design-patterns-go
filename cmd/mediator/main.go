@@ -3,9 +3,21 @@ package main
 func main() {
 	chatRoom := mediator.ChatRoom{}
 
-	userA := &mediator.User{name: "Harry", madiator: chatRoom}
-	userB := &mediator.User{name: "Ron", madiator: chatRoom}
-	userC := &mediator.User{name: "Hermione", madiator: chatRoom}
+	userA := &mediator.User{
+		name:         "Harry",
+		notification: true,
+		madiator:     chatRoom,
+	}
+	userB := &mediator.User{
+		name:         "Ron",
+		notification: true,
+		madiator:     chatRoom,
+	}
+	userC := &mediator.User{
+		name:         "Hermione",
+		notification: false,
+		madiator:     chatRoom,
+	}
 
 	chatRoom.AddUser(userA)
 	chatRoom.AddUser(userB)
