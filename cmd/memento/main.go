@@ -57,6 +57,6 @@ func main() {
 	fmt.Printf("2nd Test	: \"%s\"\n", editor.Text)
 	fmt.Printf("2nd Posi	: %d\n", editor.CursorPosition)
 	// Output:
-	// 2nd Test        : "Hello, World! "
-	// 2nd Posi        : 14
+	// 2nd Test	: "Hello, World! "
+	// 2nd Posi	: 14
 }
