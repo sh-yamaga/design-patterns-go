@@ -1,5 +1,7 @@
 package observer
 
+import "slices"
+
 // Weather holds measurement values and notifies Observers
 type Weather struct {
 	observers []Observer
@@ -15,7 +17,7 @@ func (w *Weather) AddObserver(o Observer) {
 func (w *Weather) RemoveObserver(o Observer) {
 	for i, observer := range w.observers {
 		if observer == o {
-			w.observers = append(w.observers[:i], w.observers[i+1:]...)
+			w.observers = slices.Delete(w.observers, i, i+1)
 			break
 		}
 	}
@@ -25,4 +27,12 @@ func (w *Weather) NotifyObservers() {
 	for _, obserber := range w.observers {
 		obserber.Update(w.temp, w.humidity, w.pressure)
 	}
+}
+
+func (w *Weather) SetMeasurements(temp, humidity, pressure float64) {
+	w.temp = temp
+	w.humidity = humidity
+	w.pressure = pressure
+
+	w.NotifyObservers()
 }
