@@ -10,4 +10,27 @@ func main() {
 	vm.InsertCoin()
 	vm.SelectProduct()
 	vm.Dispense()
+	// Output:
+	// Inserted Coin.
+	// Selected the product.
+	// Dispending...
+
+	// purchase 2nd product
+	vm.InsertCoin()
+	vm.SelectProduct()
+	vm.Dispense()
+	// Output:
+	// Inserted Coin.
+	// Selected the product.
+	// Dispending...
+	// Soldout.
+
+	// has been soldout
+	vm.InsertCoin()
+	vm.SelectProduct()
+	vm.Dispense()
+	// Output:
+	// Soldout. Cannot insert coins.
+	// Soldout. Cannnot select any product.
+	// Soldout. Cannot dispense any product.
 }
