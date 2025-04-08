@@ -35,15 +35,15 @@ func main() {
 	}
 	// Output:
 	// Name: Hardwood, Color: LightGreen, Texture: BordLeaf
-	// Coordinate: (0, 0)
+	//   Coordinate: (0, 0)
 	// Name: Hardwood, Color: LightGreen, Texture: BordLeaf
-	// Coordinate: (3, 2)
+	//   Coordinate: (3, 2)
 	// ...
 	// ...
 	// Name: Hardwood, Color: DeepGreen, Texture: NeedleLeaf
-	// Coordinate: (0, 0)
+	//   Coordinate: (0, 0)
 	// Name: Hardwood, Color: DeepGreen, Texture: NeedleLeaf
-	// Coordinate: (2, 3)
+	//   Coordinate: (2, 3)
 	// ...
 	// ...
 }

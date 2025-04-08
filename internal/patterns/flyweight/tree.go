@@ -10,7 +10,7 @@ type TreeType struct {
 }
 
 func (tt *TreeType) Draw(x, y int) {
-	fmt.Printf("Name: %s, Color: %s, Texture: %s\nCoordinate: (%d, %d)\n", tt.Name, tt.Color, tt.Texture, x, y)
+	fmt.Printf("Name: %s, Color: %s, Texture: %s\n  Coordinate: (%d, %d)\n", tt.Name, tt.Color, tt.Texture, x, y)
 }
 
 // Tree holds internal(Type) and external(x, y) features
