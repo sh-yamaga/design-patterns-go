@@ -11,12 +11,12 @@ type Database interface {
 
 // RealDatabase represents a concrete implementation of the Database interface
 type RealDatabase struct {
-	Name string
+	name string
 }
 
 // Query executes the given query and returns a simulated result
 func (db *RealDatabase) Query(query string) (string, error) {
-	fmt.Printf("RealDatabase[%s] executing query: %s\n", db.Name, query)
+	fmt.Printf("RealDatabase[%s] executing query: %s\n", db.name, query)
 
 	// Simulate a heavy task with a sleep
 	fmt.Print("Querying RealDatabase")

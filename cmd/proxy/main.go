@@ -7,12 +7,8 @@ import (
 )
 
 func main() {
-	// generate RealDatabase
-	realDB := &proxy.RealDatabase{
-		Name: "Proxy Sample Database",
-	}
 	// generate proxyDatabase
-	proxyDB := proxy.NewProxyDatabase(realDB)
+	proxyDB := proxy.NewProxyDatabase("Proxy Sample DB")
 
 	// 1st Query
 	fmt.Println("=== 1st Query ===")

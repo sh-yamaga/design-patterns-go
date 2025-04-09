@@ -10,9 +10,11 @@ type ProxyDatabase struct {
 	cacheEnabled bool
 }
 
-func NewProxyDatabase(realDB *RealDatabase) *ProxyDatabase {
+func NewProxyDatabase(realDBName string) *ProxyDatabase {
 	return &ProxyDatabase{
-		realDatabase: realDB,
+		realDatabase: &RealDatabase{
+			name: realDBName,
+		},
 		cacheEnabled: true,
 	}
 }
