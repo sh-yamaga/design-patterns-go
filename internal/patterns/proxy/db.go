@@ -19,11 +19,12 @@ func (db *RealDatabase) Query(query string) (string, error) {
 	fmt.Printf("RealDatabase[%s] executing query: %s\n", db.Name, query)
 
 	// Simulate a heavy task with a sleep
-	fmt.Print("Sleeping")
+	fmt.Print("Querying RealDatabase")
 	for i := 0; i < 3; i++ {
 		fmt.Print(".")
 		time.Sleep(1 * time.Second)
 	}
+	fmt.Println()
 
 	// Simulated result
 	result := "RealDatabaseResult"

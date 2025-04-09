@@ -10,6 +10,13 @@ type ProxyDatabase struct {
 	cacheEnabled bool
 }
 
+func NewProxyDatabase(realDB *RealDatabase) *ProxyDatabase {
+	return &ProxyDatabase{
+		realDatabase: realDB,
+		cacheEnabled: true,
+	}
+}
+
 // Query executes the given query, incorporating caching mechanisms
 func (pdb *ProxyDatabase) Query(query string) (string, error) {
 	// Use cache if it is enabled and the query is the same as the last one.
