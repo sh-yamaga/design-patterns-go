@@ -2,27 +2,27 @@ package absfactory
 
 import "fmt"
 
-// PayPalCreditCard represents PayPal CreditCard Payment
-type PayPalCreditCard struct{}
+// payPalCreditCard represents PayPal CreditCard Payment
+type payPalCreditCard struct{}
 
-func (ppcc *PayPalCreditCard) ProcessPayment(amount int) {
-	fmt.Printf("Processed Payment by PayPal Credit Card: ￥ %d", amount)
+func (ppcc *payPalCreditCard) ProcessPayment(amount int) {
+	fmt.Printf("Processed Payment by PayPal Credit Card: ￥ %d\n", amount)
 }
 
-// PayPalBankTransfer represents PayPal BankTransfer Payment
-type PayPalBankTransfer struct{}
+// payPalBankTransfer represents PayPal BankTransfer Payment
+type payPalBankTransfer struct{}
 
-func (ppbt *PayPalBankTransfer) ProcessPayment(amount int) {
-	fmt.Printf("Processed Payment by PayPal Credit Card: ￥ %d", amount)
+func (ppbt *payPalBankTransfer) ProcessPayment(amount int) {
+	fmt.Printf("Processed Payment by PayPal Credit Card: ￥ %d\n", amount)
 }
 
 // PayPalFactory creates PayPal Payments Processors
 type PayPalFactory struct{}
 
-func (ppf *PayPalFactory) CreditCardProcessor() *PayPalCreditCard {
-	return &PayPalCreditCard{}
+func (ppf *PayPalFactory) CreditCardProcessor() *payPalCreditCard {
+	return &payPalCreditCard{}
 }
 
-func (ppf *PayPalFactory) BankTransferProcessor() *PayPalBankTransfer {
-	return &PayPalBankTransfer{}
+func (ppf *PayPalFactory) BankTransferProcessor() *payPalBankTransfer {
+	return &payPalBankTransfer{}
 }
