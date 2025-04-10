@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	cor "github.com/sh-yamaga/design-patterns-go/internal/patterns/CoR"
+	cor "github.com/yamaga-shu/design-patterns-go/internal/patterns/CoR"
 )
 
 type Support interface {

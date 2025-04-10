@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/prototype"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/prototype"
 )
 
 func main() {

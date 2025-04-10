@@ -1,6 +1,6 @@
 package command
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/command/editor"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/command/editor"
 
 // InsertCommand is a command which insert string to editor
 type InsertCommand struct {

@@ -3,8 +3,8 @@ package creator
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/category"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/factory/work"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/category"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/work"
 )
 
 type MovieCreator struct {

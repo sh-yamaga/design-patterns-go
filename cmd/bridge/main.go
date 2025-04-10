@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/bridge"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/bridge"
 )
 
 func main() {

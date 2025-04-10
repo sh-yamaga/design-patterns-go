@@ -1,8 +1,8 @@
 package main
 
 import (
-	cor "github.com/sh-yamaga/design-patterns-go/internal/patterns/CoR"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/CoR/support"
+	cor "github.com/yamaga-shu/design-patterns-go/internal/patterns/CoR"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/CoR/support"
 )
 
 func main() {

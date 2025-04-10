@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter/aws"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/adapter/gcp"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/adapter"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/adapter/aws"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/adapter/gcp"
 )
 
 var s3Adapter aws.S3Adapter

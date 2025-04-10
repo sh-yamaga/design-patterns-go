@@ -1,6 +1,6 @@
 package main
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/composite"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/composite"
 
 func main() {
 	// create root dir

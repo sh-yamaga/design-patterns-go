@@ -1,6 +1,6 @@
 package main
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/mediator"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/mediator"
 
 func main() {
 	chatRoom := &mediator.ChatRoom{}

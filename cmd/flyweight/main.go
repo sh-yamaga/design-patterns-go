@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/flyweight"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/flyweight"
 )
 
 func main() {

@@ -1,6 +1,6 @@
 package command
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/command/editor"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/command/editor"
 
 // DeleteCommand is a command which delete string from Editor
 type DeleteCommand struct {

@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/strategy"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/strategy"
 )
 
 type Strategy interface {

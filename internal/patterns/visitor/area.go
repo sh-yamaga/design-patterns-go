@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/visitor/element"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/visitor/element"
 )
 
 type AreaVisitor struct{}

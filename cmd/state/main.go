@@ -1,6 +1,6 @@
 package main
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/state"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/state"
 
 func main() {
 	// initialize VendingMachine(inventory: 2)

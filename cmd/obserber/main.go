@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/observer"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/observer/display"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/observer"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/observer/display"
 )
 
 func main() {

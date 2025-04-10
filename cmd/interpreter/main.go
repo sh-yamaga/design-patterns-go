@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/interpreter"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/interpreter"
 )
 
 func main() {

@@ -1,3 +1,3 @@
-module github.com/sh-yamaga/design-patterns-go
+module github.com/yamaga-shu/design-patterns-go
 
 go 1.23.4

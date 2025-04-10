@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/visitor"
-	"github.com/sh-yamaga/design-patterns-go/internal/patterns/visitor/element"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/visitor"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/visitor/element"
 )
 
 func main() {

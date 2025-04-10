@@ -1,6 +1,6 @@
 package facade
 
-import "github.com/sh-yamaga/design-patterns-go/internal/patterns/facade/book"
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/facade/book"
 
 type TravelFacade struct {
 	flightBooker    *book.FlightBooker
