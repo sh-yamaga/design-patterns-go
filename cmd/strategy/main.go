@@ -25,6 +25,9 @@ func main() {
 	max := 10_000
 	rep := 10_000
 	fmt.Printf("Max Random Number: %d\nRepeat Time: %d\n", max, rep)
+	// Output:
+	// Max Random Number: 10000
+	// Repeat Time: 10000
 
 	var start time.Time
 	// Random number generator
