@@ -1,4 +1,4 @@
-package processor
+package template
 
 import (
 	"fmt"

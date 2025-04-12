@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/yamaga-shu/design-patterns-go/internal/patterns/template/processor"
+	"github.com/yamaga-shu/design-patterns-go/internal/patterns/template"
 )
 
 func main() {
 	// csv processor
-	cp := processor.NewCsvProcessor()
+	cp := template.NewCsvProcessor()
 
 	if err := cp.Execute(); err != nil {
 		fmt.Println(err)
@@ -19,7 +19,7 @@ func main() {
 	// Saving processed csv data
 
 	// xml processor
-	xp := processor.NewXmlProcessor()
+	xp := template.NewXmlProcessor()
 
 	if err := xp.Execute(); err != nil {
 		fmt.Println(err)

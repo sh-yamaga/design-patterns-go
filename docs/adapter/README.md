@@ -4,7 +4,7 @@
 
 The Adapter Pattern is a structural design pattern that allows structs with incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces by wrapping an existing struct with a new interface.
 
-![Class Diagram](./.docs/class-diagram.drawio.png)
+![Class Diagram](./assets/class-diagram.drawio.png)
 
 ## Why is "Adapter Pattern" needed ?
 
@@ -20,7 +20,7 @@ The Adapter Pattern is useful in the following scenarios:
 
 ## Sample program
 
-![Sample program diagram](./.docs/sample-program.drawio.png)
+![Sample program diagram](./assets/sample-program.drawio.png)
 
 This sample code demonstrates the use of the Adapter Pattern with an example of cloud storage services. The program allows uploading and retrieving files using different cloud storage services (AWS S3 and GCP Cloud Storage) through a unified interface.
 

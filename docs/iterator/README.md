@@ -4,7 +4,7 @@
 
 The Iterator Pattern is a design pattern that provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. It is commonly used to traverse collections like lists, arrays, or other data structures.
 
-![Class diagram](./.docs/class-diagram.drawio.png)
+![Class diagram](./assets/class-diagram.drawio.png)
 
 ## Why is "Iterator Pattern" needed ?
 
@@ -22,7 +22,7 @@ While `for` loops provide a straightforward way to iterate over collections, the
 
 ## Sample program
 
-![Sample program diagram](./.docs/sample-program.drawio.png)
+![Sample program diagram](./assets/sample-program.drawio.png)
 
 This sample code demonstrates the use of the Iterator Pattern with an example of fruits and a fruit basket. The fruit basket is treated as a collection containing multiple fruits, and an Iterator is used to access the fruits sequentially.
 

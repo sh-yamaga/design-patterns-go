@@ -8,7 +8,9 @@ The project is organized into several directories, each representing a different
 
 - **cmd**: Contains main programs that demonstrate the usage of each design pattern.
 
-- **internal/patterns**: Contains the implementation of the design patterns, and README.md to describe each pattern.
+- **docs**: Contains README.md to describe each pattern.
+
+- **internal/patterns**: Contains the implementation of the design patterns.
 
 ## How to Run the Sample Programs
 

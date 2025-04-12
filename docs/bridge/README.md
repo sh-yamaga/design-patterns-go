@@ -4,7 +4,7 @@
 
 The Bridge Pattern is a structural design pattern that separates an abstraction from its implementation, allowing both to vary independently. It’s useful when you want to avoid a permanent binding between an abstraction and its implementation.
 
-![Class Diagram](./.docs/class-diagram.drawio.png)
+![Class Diagram](./assets/class-diagram.drawio.png)
 
 ## Why is "Bridge Pattern" needed?
 
@@ -18,7 +18,7 @@ The Bridge Pattern is a structural design pattern that separates an abstraction 
 
 ## Sample program
 
-![Sample program diagram](./.docs/sample-program.drawio.png)
+![Sample program diagram](./assets/sample-program.drawio.png)
 
 This example demonstrates a remote controller that can operate different types of devices (like a TV or a radio) without changing the remote controller’s logic:
 

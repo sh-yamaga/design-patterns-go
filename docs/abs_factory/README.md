@@ -4,7 +4,7 @@
 
 The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related objects without specifying their concrete classes. It allows you to create different objects that share a common theme or purpose, ensuring that all objects produced by a particular factory are compatible with each other.
 
-![Class Diagram](./.docs/class-diagram.drawio.png)
+![Class Diagram](./assets/class-diagram.drawio.png)
 
 ## Why is "Abstract Factory Pattern" needed?
 

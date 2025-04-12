@@ -4,7 +4,7 @@
 
 The Template Pattern is a behavioral design pattern that defines the skeleton of an algorithm in a function, deferring some steps to other functions. It allows other functions to redefine certain steps of an algorithm without changing its structure. This pattern is commonly used to implement the invariant parts of an algorithm once and allow other functions to implement the behavior that can vary.
 
-![Class diagram](./.docs/class-diagram.drawio.png)
+![Class diagram](./assets/class-diagram.drawio.png)
 
 ## Why is "Template Pattern" needed?
 
@@ -20,7 +20,7 @@ The Template Pattern offers several advantages:
 
 ## Sample program
 
-![Sample program diagram](./.docs/sample-program.drawio.png)
+![Sample program diagram](./assets/sample-program.drawio.png)
 
 This sample code demonstrates the use of the Template Pattern with examples of CSV and XML data processing systems. The system processes data using a common algorithm structure defined in a base processor function.
 
