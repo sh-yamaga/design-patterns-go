@@ -1,10 +1,15 @@
 package bridge
 
-type RemoteController struct {
-	device IDevice
+type Device interface {
+	On() string
+	Off() string
 }
 
-func NewRemoteController(device IDevice) *RemoteController {
+type RemoteController struct {
+	device Device
+}
+
+func NewRemoteController(device Device) *RemoteController {
 	return &RemoteController{device: device}
 }
 
