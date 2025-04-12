@@ -10,20 +10,20 @@ type BookFactory struct {
 }
 
 func (bf BookFactory) New(title, creator string) *work.Book {
-	b := bf.createBook(title, creator)
-	bf.registerBook(b)
+	b := bf.create(title, creator)
+	bf.register(b)
 
 	return b
 }
 
-func (bf BookFactory) createBook(title, creator string) *work.Book {
+func (bf BookFactory) create(title, creator string) *work.Book {
 	return &work.Book{
 		Title:   title,
 		Creator: creator,
 	}
 }
 
-func (bf BookFactory) registerBook(b *work.Book) *work.Book {
+func (bf BookFactory) register(b *work.Book) *work.Book {
 	fmt.Printf("registered book: %s\n", b.Title)
 
 	return b

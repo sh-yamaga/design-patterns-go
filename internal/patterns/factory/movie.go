@@ -10,20 +10,20 @@ type MovieFactory struct {
 }
 
 func (mf MovieFactory) New(title, creator string) *work.Movie {
-	m := mf.createMovie(title, creator)
-	mf.registerMovie(m)
+	m := mf.create(title, creator)
+	mf.register(m)
 
 	return m
 }
 
-func (mf MovieFactory) createMovie(title, creator string) *work.Movie {
+func (mf MovieFactory) create(title, creator string) *work.Movie {
 	return &work.Movie{
 		Title:   title,
 		Creator: creator,
 	}
 }
 
-func (mf MovieFactory) registerMovie(m *work.Movie) *work.Movie {
+func (mf MovieFactory) register(m *work.Movie) *work.Movie {
 	fmt.Printf("registered movie: %s\n", m.Title)
 
 	return m
