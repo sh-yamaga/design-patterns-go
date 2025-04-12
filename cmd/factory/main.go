@@ -1,17 +1,15 @@
 package main
 
-import (
-	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/creator"
-)
+import "github.com/yamaga-shu/design-patterns-go/internal/patterns/factory"
 
 func main() {
-	bookCreator := creator.BookCreator{}
-	movieCreator := creator.MovieCreator{}
+	bookFactory := &factory.BookFactory{}
+	movieFactory := &factory.MovieFactory{}
 
-	b1 := bookCreator.New("The Sirens of Titan", "Kurt Vonnegut")
-	b2 := bookCreator.New("The Three-Body Problem", "Cixin Liu")
-	m1 := movieCreator.New("About Time", "Richard Curtis")
-	m2 := movieCreator.New("Forrest Gump", "Robert Lee Zemeckis")
+	b1 := bookFactory.New("The Sirens of Titan", "Kurt Vonnegut")
+	b2 := bookFactory.New("The Three-Body Problem", "Cixin Liu")
+	m1 := movieFactory.New("About Time", "Richard Curtis")
+	m2 := movieFactory.New("Forrest Gump", "Robert Lee Zemeckis")
 	// Output:
 	// registered a Book: The Sirens of Titan
 	// registered a Book: The Three-Body Problem
