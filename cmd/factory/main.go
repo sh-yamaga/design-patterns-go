@@ -23,16 +23,16 @@ func main() {
 	m1.Display()
 	m2.Display()
 	// Output:
-	// 【 Book 】
-	//  Title: The Sirens of Titan
-	//  Creater: Kurt Vonnegut
-	// 【 Book 】
-	//  Title: The Three-Body Problem
-	//  Creater: Cixin Liu
-	// 【 Movie 】
-	//  Title: About Time
-	//  Creater: Richard Curtis
-	// 【 Movie 】
-	//  Title: Forrest Gump
-	//  Creater: Robert Lee Zemeckis
+	// 【Book】
+	// Title: The Sirens of Titan
+	// Creator: Kurt Vonnegut
+	// 【Book】
+	// Title: The Three-Body Problem
+	// Creator: Cixin Liu
+	// 【Movie】
+	// Title: About Time
+	// Creator: Richard Curtis
+	// 【Movie】
+	// Title: Forrest Gump
+	// Creator: Robert Lee Zemeckis
 }

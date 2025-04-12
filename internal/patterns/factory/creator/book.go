@@ -3,7 +3,6 @@ package creator
 import (
 	"fmt"
 
-	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/category"
 	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/work"
 )
 
@@ -19,11 +18,9 @@ func (bc BookCreator) New(title, creator string) *work.Book {
 
 func (bc BookCreator) createBook(title, creator string) *work.Book {
 	return &work.Book{
-		Work: work.Work{
-			Title:    title,
-			Creater:  creator,
-			Category: category.Book,
-		}}
+		Title:   title,
+		Creator: creator,
+	}
 }
 
 func (bc BookCreator) registerBook(b *work.Book) *work.Book {

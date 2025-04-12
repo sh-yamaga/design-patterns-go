@@ -3,7 +3,6 @@ package creator
 import (
 	"fmt"
 
-	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/category"
 	"github.com/yamaga-shu/design-patterns-go/internal/patterns/factory/work"
 )
 
@@ -19,11 +18,9 @@ func (mc MovieCreator) New(title, creator string) *work.Movie {
 
 func (mc MovieCreator) createMovie(title, creator string) *work.Movie {
 	return &work.Movie{
-		Work: work.Work{
-			Title:    title,
-			Creater:  creator,
-			Category: category.Movie,
-		}}
+		Title:   title,
+		Creator: creator,
+	}
 }
 
 func (mc MovieCreator) registerMovie(m *work.Movie) *work.Movie {
