@@ -19,7 +19,8 @@ The Builder Pattern is a creational design pattern that lets you construct compl
 
 ## Sample Program
 
-![Sample program diagram](./assets/sample-program.drawio.png)
+![Sample Program Diagram](./assets/sample-program.drawio.png)
+![Sample Sequence Diagram](./assets/sample-sequence.drawio.png)
 
 This sample code demonstrates the Builder Pattern with two different use cases—constructing an HTML document and constructing an SQL query:
 
