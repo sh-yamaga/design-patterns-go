@@ -5,6 +5,7 @@
 The Builder Pattern is a creational design pattern that lets you construct complex objects step by step. It separates the construction of an object from its representation, allowing the same construction process to create different representations. By encapsulating the creation logic in a Builder, you gain flexibility and clarity when creating complex objects.
 
 ![Class Diagram](./assets/class-diagram.drawio.png)
+![Sequence Diagram](./assets/class-sequence-diagram.drawio.png)
 
 ## Why is "Builder Pattern" needed?
 
