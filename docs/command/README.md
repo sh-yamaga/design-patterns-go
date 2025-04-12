@@ -6,6 +6,8 @@ The Command Pattern is a behavioral design pattern that encapsulates a request (
 
 ![Class Diagram](./assets/class-diagram.drawio.png)
 
+![Sequence Diagram](./assets/class-sequence.drawio.png)
+
 ## Why is "Command Pattern" needed?
 
 1. **Decoupling**: It separates the code issuing a request from the code that knows how to fulfill it. This results in more modular and maintainable code.
