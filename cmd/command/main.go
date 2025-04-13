@@ -9,14 +9,14 @@ import (
 
 func main() {
 	e := editor.NewEditor()
-	cmdManager := &editor.CommnadManager{}
+	ec := &editor.EditorClient{}
 
-	cmdManager.ExecuteCommand(&command.InsertCommand{
+	ec.ExecuteCommand(&command.InsertCommand{
 		Editor:       e,
 		CursorIndex:  0,
 		TextToInsert: "Hello, ",
 	})
-	cmdManager.ExecuteCommand(&command.InsertCommand{
+	ec.ExecuteCommand(&command.InsertCommand{
 		Editor:       e,
 		CursorIndex:  len(e.Text()),
 		TextToInsert: "World!",
@@ -27,7 +27,7 @@ func main() {
 	// Hello, World!
 
 	// delete "!"
-	cmdManager.ExecuteCommand(&command.DeleteCommand{
+	ec.ExecuteCommand(&command.DeleteCommand{
 		Editor:      e,
 		CursorIndex: len(e.Text()) - 1,
 		Length:      1,
@@ -38,25 +38,25 @@ func main() {
 	// Hello, World
 
 	// Undo: Cancel the last DeleteCommand
-	cmdManager.Undo()
+	ec.Undo()
 	fmt.Println("Canceled DeleteCommand:", e.Text())
 	// Output:
 	// Canceled DeleteCommand: Hello, World!
 
 	// Undo: Cancal the last InsertCommand
-	cmdManager.Undo()
+	ec.Undo()
 	fmt.Println("Canceled last InsertCommand:", e.Text())
 	// Output:
 	// Canceled last InsertCommand: Hello,
 
 	// Undo: Cancel the first InsertCommand
-	cmdManager.Undo()
+	ec.Undo()
 	fmt.Println("Canceled first InsertCommand:", e.Text())
 	// Output:
 	// Canceled first InsertCommand:
 
 	// Undo: Noting happened
-	cmdManager.Undo()
+	ec.Undo()
 	// Output:
 	// There is no command to undo
 }
