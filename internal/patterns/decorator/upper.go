@@ -3,7 +3,7 @@ package decorator
 import "strings"
 
 type UpperCaseFilter struct {
-	Wrapped IStream
+	Wrapped Interface
 }
 
 func (ucf *UpperCaseFilter) Read() string {

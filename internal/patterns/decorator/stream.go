@@ -1,6 +1,6 @@
 package decorator
 
-type IStream interface {
+type Interface interface {
 	Read() string
 }
 

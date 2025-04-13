@@ -10,7 +10,7 @@ func main() {
 	// create original streem
 	originalStream := &decorator.Stream{Data: "hello, decorator pattern"}
 
-	//  add filter streem to uppercase
+	//  add filter which transform Wrapped Data to Uppercase
 	upperStream := &decorator.UpperCaseFilter{
 		Wrapped: originalStream,
 	}
