@@ -13,7 +13,7 @@ type Support interface {
 }
 
 type SupportHandler interface {
-	do(*cor.HttpResponse)
+	handleResponse(*cor.HttpResponse)
 }
 
 type HttpResponseSupport struct {
@@ -42,7 +42,7 @@ func (hrs *HttpResponseSupport) Resolve(hr *cor.HttpResponse) {
 			hr.StatusCode,
 			http.StatusText(int(hr.StatusCode)),
 		)
-		hrs.handler.do(hr)
+		hrs.handler.handleResponse(hr)
 		return
 	}
 

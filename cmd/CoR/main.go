@@ -21,6 +21,7 @@ func main() {
 	}
 
 	// create Response Supporter
+	entry := support.NewEntry()
 	info := support.NewInformationalResponseSupport()
 	success := support.NewSuccessResponseSupport()
 	redirect := support.NewRedirectionResponseSupport()
@@ -28,14 +29,15 @@ func main() {
 	serverError := support.NewServerErrorResponseSupport()
 
 	// create Chain of Responsibility
-	info.SetNext(success).
+	entry.SetNext(info).
+		SetNext(success).
 		SetNext(redirect).
 		SetNext(clientError).
 		SetNext(serverError)
 
 	// resolve Http Response
 	for _, r := range res {
-		info.Resolve(&r)
+		entry.Resolve(&r)
 	}
 	// Output:
 	// === InformationalResponseSupport ===

@@ -24,7 +24,7 @@ func NewClientErrorResponseSupport() *ClientErrorResponseSupport {
 
 type clientErrorHandler struct{}
 
-func (ceh clientErrorHandler) do(hr *cor.HttpResponse) {
+func (ceh clientErrorHandler) handleResponse(hr *cor.HttpResponse) {
 	fmt.Println("Recieved Client Error Response")
 	fmt.Println("Do Something...")
 	fmt.Println("Done")

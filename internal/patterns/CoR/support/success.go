@@ -24,7 +24,7 @@ func NewSuccessResponseSupport() *SuccessfulResponseSupport {
 
 type successHandler struct{}
 
-func (sh successHandler) do(hr *cor.HttpResponse) {
+func (sh successHandler) handleResponse(hr *cor.HttpResponse) {
 	fmt.Println("Recieved Success Response")
 	fmt.Println("Do Something...")
 	fmt.Println("Done")

@@ -24,7 +24,7 @@ func NewServerErrorResponseSupport() *ServerErrorResponseSupport {
 
 type serverErrorHandler struct{}
 
-func (seh serverErrorHandler) do(hr *cor.HttpResponse) {
+func (seh serverErrorHandler) handleResponse(hr *cor.HttpResponse) {
 	fmt.Println("Recieved Server Error Response")
 	fmt.Println("Do Something...")
 	fmt.Println("Done")
