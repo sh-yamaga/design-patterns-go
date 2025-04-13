@@ -29,11 +29,11 @@ This sample demonstrates how different concrete handlers in the chain handle or 
 - **HttpResponseSupport**: The base class (struct) that defines the interface and behavior for setting the next handler and resolving the request (in this case, an HTTP response).
 
 - **Concrete implementations of `HttpResponseSupport`**: Each type is responsible for a specific range of HTTP status codes. If the request falls in that range, it processes it; otherwise, it delegates to the next handler in the chain.
-  - InformationalResponseSupport
-  - SuccessfulResponseSupport
-  - RedirectionResponseSupport
-  - ClientErrorResponseSupport
-  - ServerErrorResponseSupport
+  - InformationalResponseSupport(100 - 199)
+  - SuccessfulResponseSupport(200 - 299)
+  - RedirectionResponseSupport(300 - 399)
+  - ClientErrorResponseSupport(400 - 499)
+  - ServerErrorResponseSupport(500 - 599)
   
 - **Client Code**: Creates a series of HttpResponse objects with various status codes, assembles the concrete handlers into a chain, and calls the Resolve method on the first handler. Each handler will either process the response or pass it on until the correct handler is found.
 
