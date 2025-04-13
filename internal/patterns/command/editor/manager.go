@@ -7,18 +7,18 @@ type Command interface {
 	Undo()
 }
 
-// CmdManager manages excecution and undo of commands
-type CmdManager struct {
+// CommnadManager manages excecution and undo of commands
+type CommnadManager struct {
 	history []Command
 }
 
 // ExcecuteCommand excecutes command and record its history
-func (cm *CmdManager) ExecuteCommand(cmd Command) {
+func (cm *CommnadManager) ExecuteCommand(cmd Command) {
 	cmd.Execute()
 	cm.history = append(cm.history, cmd)
 }
 
-func (cm *CmdManager) Undo() {
+func (cm *CommnadManager) Undo() {
 	if len(cm.history) == 0 {
 		fmt.Println("There is no command to undo")
 		return

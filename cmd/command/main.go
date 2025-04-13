@@ -9,7 +9,7 @@ import (
 
 func main() {
 	e := editor.NewEditor()
-	cmdManager := &editor.CmdManager{}
+	cmdManager := &editor.CommnadManager{}
 
 	cmdManager.ExecuteCommand(&command.InsertCommand{
 		Editor:       e,
