@@ -26,7 +26,7 @@ Below is a simplified example of how you can use the Decorator Pattern for strea
 
 - **Interface**: The common interface (Interface) that all components (including the decorators) implement.
 
-- **Stream`** (Concrete Component): Contains the original data.
+- **Stream** (Concrete Component): Contains the original data.
   
 - **UpperCaseFilter** (Concrete Decorator): Wraps a Stream and transforms the data to uppercase before returning it.
 
