@@ -26,7 +26,7 @@ This sample code demonstrates the Command Pattern with a simple text editor wher
 
 - **InsertCommand**: Inserts text at the current cursor position in the editor.  
 - **DeleteCommand**: Deletes text from the editor at the specified position and length.  
-- **CmdManager**: Manages command execution history, allowing you to undo or redo operations as needed.
+- **EditorClient**: Manages command execution history, allowing you to undo or redo operations as needed.
 
 By using this pattern, you can easily add new commands (for example, copy, paste) and manage undo/redo functionality with minimal changes to the editor code.
 
