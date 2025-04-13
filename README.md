@@ -28,5 +28,6 @@ This will execute the sample program that demonstrates the Iterator Pattern with
 
 This project references the following book:
 
-- [Java言語で学ぶデザインパターン入門第3版(著:結城 浩)](https://www.amazon.co.jp/dp/B09HK66P5X)
-- [パターン指向リファクタリング入門~ソフトウエア設計を改善する27の作法(著: Joshua Kerievsky, 訳著: 小黒 直樹, 村上 歴)](https://www.amazon.co.jp/dp/4822282384)
+- [Java言語で学ぶデザインパターン入門第3版(著: 結城 浩)](https://www.amazon.co.jp/dp/B09HK66P5X)
+- [パターン指向リファクタリング入門~ソフトウエア設計を改善する27の作法(著: Joshua Kerievsky, 小黒 直樹, 村上 歴)](https://www.amazon.co.jp/dp/4822282384)
+- [Go言語 100Tips ありがちなミスを把握し、実装を最適化する impress top gearシリーズ(著: Teiva Harsanyi , 柴田 芳樹)](https://www.amazon.co.jp/dp/B0CFL1DK8Q)
