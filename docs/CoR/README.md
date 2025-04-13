@@ -22,13 +22,12 @@ Because each handler is focused on a particular aspect of request processing, re
 
 ## Sample Program
 
-![Sample program diagram](./assets/sample-program.drawio.png)
-
 This sample demonstrates how different concrete handlers in the chain handle or pass on HTTP response objects based on the status code:
 
 - **HttpResponseSupport**: The base class (struct) that defines the interface and behavior for setting the next handler and resolving the request (in this case, an HTTP response).
 
 - **Concrete implementations of `HttpResponseSupport`**: Each type is responsible for a specific range of HTTP status codes. If the request falls in that range, it processes it; otherwise, it delegates to the next handler in the chain.
+  - Entry(0 - 0): would not resolve HttpResponse, just "Entry" of this Chain.
   - InformationalResponseSupport(100 - 199)
   - SuccessfulResponseSupport(200 - 299)
   - RedirectionResponseSupport(300 - 399)
