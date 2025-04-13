@@ -50,6 +50,6 @@ func (e *Editor) Text() string {
 	return e.text
 }
 
-func (e *Editor) SetText(initialText string) {
-	e.text = initialText
+func (e *Editor) SetText(text string) {
+	e.text = text
 }
