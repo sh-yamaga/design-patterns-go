@@ -32,4 +32,7 @@ This sample code demonstrates the use of the Adapter Pattern with an example of 
 
 By using this pattern, you can interact with different cloud storage services through a common interface, making it easy to switch between services or add new ones without changing the client code.
 
-To run the sample code, execute `go run ./cmd/adapter/main.go`.
+To run the sample code, execute 
+```bash
+go run ./cmd/adapter/main.go
+```
